@@ -3,6 +3,9 @@ import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import BottomTabNav from './BottomTabNav';
+
 function DashBoardScreen() {
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -17,13 +20,6 @@ function CourseScreen() {
         </View>
     );
 }
-function PremiumScreen() {
-    return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text>Premium Screen</Text>
-        </View>
-    );
-}
 function ContactUsScreen() {
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -31,10 +27,10 @@ function ContactUsScreen() {
         </View>
     );
 }
-function AboutUsScreen() {
+function SettingsScreen() {
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text>AboutUs Screen</Text>
+            <Text>Settings Screen</Text>
         </View>
     );
 }
@@ -53,34 +49,39 @@ function SignUpScreen() {
     );
 }
 
+function Root(){
+    return(
+        <BottomTabNav/>
+    )
+}
+
 const Stack = createNativeStackNavigator();
 const getIsSignedIn = () => {
     // custom logic
     return true
 };
 
+
 function RouteNavigator() {
     const isSignedIn = getIsSignedIn()
-    return (
-        <NavigationContainer>
-            <Stack.Navigator>
-                {isSignedIn ? (
-                    <>
-                        <Stack.Screen name="DashBoard" component={DashBoardScreen} />
-                        <Stack.Screen name="Course" component={CourseScreen} />
-                        <Stack.Screen name="Premium" component={PremiumScreen} />
-                        <Stack.Screen name="Contact us" component={ContactUsScreen} />
-                        <Stack.Screen name="About us" component={AboutUsScreen} />
-                    </>
-                ) : (
-                    <>
-                        <Stack.Screen name="SignIn" component={SignInScreen} />
-                        <Stack.Screen name="SignUp" component={SignUpScreen} />
-                    </>
-                )}
 
-            </Stack.Navigator>
-        </NavigationContainer>
+    return (
+
+        <Stack.Navigator>
+            {isSignedIn ? (
+                <>
+                    
+                    <Stack.Screen name="root" component={Root} options={{ headerShown: false }}/>
+                </>
+            ) : (
+                <>
+                    <Stack.Screen name="SignIn" component={SignInScreen} />
+                    <Stack.Screen name="SignUp" component={SignUpScreen} />
+                </>
+            )}
+
+        </Stack.Navigator>
+
     );
 }
 

@@ -1,0 +1,104 @@
+import * as React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Ionicons from '@expo/vector-icons/Ionicons';
+import { BlurView } from 'expo-blur';
+
+
+
+function DashBoardScreen() {
+    return (
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+            <Text>DashBoard Screen</Text>
+        </View>
+    );
+}
+function CourseScreen() {
+    return (
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+            <Text>Course Screen</Text>
+        </View>
+    );
+}
+function ContactUsScreen() {
+    return (
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+            <Text>Contact Screen</Text>
+        </View>
+    );
+}
+function SettingsScreen() {
+    return (
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+            <Text>Settings Screen</Text>
+        </View>
+    );
+}
+
+const Tab = createBottomTabNavigator();
+
+const BottomTabNav = () => {
+    return (
+        <Tab.Navigator
+            initialRouteName="DashBoard"
+            screenOptions={({ route }) => ({
+                tabBarIcon: ({ focused, color, size }) => {
+                    let iconName;
+
+                    if (route.name === 'DashBoard') {
+                        iconName = focused
+                            ? 'md-home'
+                            : 'md-home-outline';
+                    } else if (route.name === 'Course') {
+                        iconName = focused ? 'book' : 'book-outline';
+                    } else if (route.name === 'Settings') {
+                        iconName = focused ? 'settings' : 'settings-outline';
+                    } else if (route.name === 'Contact') {
+                        iconName = focused ? 'information-circle' : 'information-circle-outline';
+                    }
+
+                    // You can return any component that you like here!
+                    return <Ionicons name={iconName} size={size} color={color} />;
+                },
+                tabBarActiveTintColor: '#3B474F',
+                tabBarInactiveTintColor: 'gray',
+                tabBarStyle: { position: 'absolute' },
+                tabBarBackground: () => (
+                    <BlurView tint="light" intensity={100} style={StyleSheet.absoluteFill} />
+                ),
+            })}
+
+        >
+            <Tab.Screen
+                name="DashBoard"
+                component={DashBoardScreen}
+                options={{
+                    tabBarLabel: 'Dashboard',
+
+
+                }} />
+            <Tab.Screen
+                name="Course"
+                component={CourseScreen}
+                options={{
+                    tabBarLabel: 'Course',
+
+                }} />
+            <Tab.Screen
+                name='Settings'
+                component={SettingsScreen}
+                options={{
+                    tabBarLabel: 'Settings',
+
+                }} />
+            <Tab.Screen
+                name='Contact'
+                component={ContactUsScreen}
+                options={{
+                    tabBarLabel: 'Contact',
+
+                }} />
+        </Tab.Navigator>
+    )
+}
+export default BottomTabNav;
