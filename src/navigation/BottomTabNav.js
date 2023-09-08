@@ -4,6 +4,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { BlurView } from 'expo-blur';
 import DashboardScreen from '../screens/dashboardScreen';
+import { PRIMARY_COLOR } from '../helpers/constants';
+import UserProfile from '../components/UserProfile';
 
 
 function DashBoardScreen() {
@@ -40,6 +42,12 @@ const BottomTabNav = () => {
         <Tab.Navigator
             initialRouteName="DashBoard"
             screenOptions={({ route }) => ({
+                headerStyle : {backgroundColor : PRIMARY_COLOR},
+                headerRight : () => (
+                    <UserProfile/>
+                )
+                    
+                ,
                 tabBarIcon: ({ focused, color, size }) => {
                     let iconName;
 

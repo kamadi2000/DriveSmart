@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import BottomTabNav from './BottomTabNav';
+import { PRIMARY_COLOR } from '../helpers/constants';
 // import Login from '../screens/LoginScreen';
 
 
@@ -44,7 +45,7 @@ function RouteNavigator() {
 
     return (
 
-        <Stack.Navigator>
+        <Stack.Navigator screenOptions={{headerStyle : {backgroundColor : PRIMARY_COLOR}}}>
             {isSignedIn ? (
                 <>
                     
