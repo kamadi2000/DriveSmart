@@ -3,7 +3,7 @@ import { Task_button } from "../components/basic/ButtonComponent";
 import { PasswordField, TextField } from "../components/basic/InputField";
 import { BodyText, HeadingText, LabelText, LightText } from "../components/basic/TextComponent";
 import { TouchableWithoutFeedback, View, Keyboard, ScrollView, StyleSheet, Linking, TouchableOpacity } from "react-native";
-import { CARD_COLOR, WIDTH } from "../helpers/constants";
+import { CARD_COLOR, WIDTH } from "../utils/constants";
 import { FontAwesome5 } from '@expo/vector-icons';
 
 const SignUp = () => {
@@ -78,6 +78,7 @@ const SignUp = () => {
               </View>
             </HorizontalStack>
           </Task_button>
+          <LightText style={{textAlign : 'center',fontSize : 10}}>By signing up ,you are agreeing to our terms, Data Policy and Cookies Policy</LightText>
         
           <TouchableOpacity>
           <LightText>Already have an account ? Login Now.</LightText>

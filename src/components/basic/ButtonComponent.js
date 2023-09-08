@@ -1,5 +1,6 @@
 import { TouchableOpacity } from "react-native";
-import { PRIMARY_COLOR,SECONDARY_COLOR,WIDTH } from "../../helpers/constants";
+import { WIDTH } from "../../utils/constants";
+import { PRIMARY_COLOR } from "../../utils/colors";
 
 export const Task_button = ({children,style}) => 
 <TouchableOpacity style={{

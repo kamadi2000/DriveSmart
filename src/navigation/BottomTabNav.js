@@ -4,7 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { BlurView } from 'expo-blur';
 import DashboardScreen from '../screens/dashboardScreen';
-import { PRIMARY_COLOR } from '../helpers/constants';
+import { PRIMARY_COLOR } from '../utils/colors';
 import UserProfile from '../components/UserProfile';
 
 

@@ -3,7 +3,7 @@ import { Task_button } from "../components/basic/ButtonComponent";
 import { PasswordField, TextField } from "../components/basic/InputField";
 import { BodyText, HeadingText, LabelText, LightText } from "../components/basic/TextComponent";
 import { TouchableWithoutFeedback, View, Keyboard, ScrollView, StyleSheet, Linking, TouchableOpacity } from "react-native";
-import { CARD_COLOR, WIDTH } from "../helpers/constants";
+import { CARD_COLOR } from "../utils/colors";
 import { FontAwesome5 } from '@expo/vector-icons';
 
 const Login = () => {

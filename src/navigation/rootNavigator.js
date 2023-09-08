@@ -5,7 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import BottomTabNav from './BottomTabNav';
-import { PRIMARY_COLOR } from '../helpers/constants';
+import { PRIMARY_COLOR } from '../utils/colors';
 import SignUp from '../screens/SignUpScreen';
 // import Login from '../screens/LoginScreen';
 
@@ -38,7 +38,7 @@ function Root(){
 const Stack = createNativeStackNavigator();
 const getIsSignedIn = () => {
     // custom logic
-    return false
+    return true
 };
 
 

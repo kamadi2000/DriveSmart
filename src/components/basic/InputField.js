@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text,View } from 'react-native';
 import { FloatingLabelInput } from 'react-native-floating-label-input';
 import { LabelText } from './TextComponent';
-import { WIDTH } from '../../helpers/constants';
+import { WIDTH } from '../../utils/constants';
 
 
 
@@ -10,7 +10,7 @@ export const PasswordField = ({label}) => {
     const [cont, setCont] = useState('');
     const [show, setShow] = useState(false);
     return (  
-        <View style={{height : 47,width : WIDTH*0.8}}>      
+        <View style={{height : 40 ,width : WIDTH*0.8}}>      
             <FloatingLabelInput
             label={label}
             isPassword
@@ -23,7 +23,6 @@ export const PasswordField = ({label}) => {
                 backgroundColor: '#fff',
                 borderColor: '#6C6A6A',
                 borderRadius: 13,
-                height : 47
                 
 
 
@@ -57,7 +56,7 @@ export const TextField = ({label}) => {
     const [cont, setCont] = useState('');
     const [show, setShow] = useState(false);
     return (
-        <View style={{height : 47 , width : WIDTH*0.8}}>
+        <View style={{height : 40 , width : WIDTH*0.8}}>
             <FloatingLabelInput
             label={label}
             staticLabel
@@ -73,7 +72,7 @@ export const TextField = ({label}) => {
 
 
             }}
-            style={{backgroundColor: 'green',height : 47}}
+            
             customLabelStyles={{
                 colorFocused: '#6C6A6A',
                 fontSizeFocused: 12,

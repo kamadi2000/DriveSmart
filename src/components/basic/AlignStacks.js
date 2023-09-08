@@ -1,5 +1,5 @@
 import { View } from "react-native";
-import { WIDTH } from "../../helpers/constants";
+import { WIDTH } from "../../utils/constants";
 
 export const VerticalStack = ({children,style}) =>
     <View style={{
