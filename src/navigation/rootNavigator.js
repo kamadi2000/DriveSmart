@@ -6,7 +6,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import BottomTabNav from './BottomTabNav';
 import { PRIMARY_COLOR } from '../utils/colors';
-import SignUp from '../screens/SignUpScreen';
+// import SignUp from '../screens/SignUpScreen';
 // import Login from '../screens/LoginScreen';
 
 

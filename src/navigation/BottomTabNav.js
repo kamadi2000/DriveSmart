@@ -6,7 +6,7 @@ import { BlurView } from 'expo-blur';
 import DashboardScreen from '../screens/dashboardScreen';
 import { PRIMARY_COLOR } from '../utils/colors';
 import UserProfile from '../components/UserProfile';
-
+import CoursePageScreen from '../screens/courseScreen';
 
 function DashBoardScreen() {
     return (
@@ -15,9 +15,7 @@ function DashBoardScreen() {
 }
 function CourseScreen() {
     return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text>Course Screen</Text>
-        </View>
+        <CoursePageScreen/>
     );
 }
 function ContactUsScreen() {
