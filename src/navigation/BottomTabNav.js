@@ -3,14 +3,12 @@ import { View, Text, StyleSheet } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { BlurView } from 'expo-blur';
-
+import DashboardScreen from '../screens/dashboardScreen';
 
 
 function DashBoardScreen() {
     return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text>DashBoard Screen</Text>
-        </View>
+        <DashboardScreen/>
     );
 }
 function CourseScreen() {
