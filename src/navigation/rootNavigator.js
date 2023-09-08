@@ -5,46 +5,23 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import BottomTabNav from './BottomTabNav';
+import Login from '../screens/LoginScreen';
 
-function DashBoardScreen() {
+
+
+
+function LoginScreen() {
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text>DashBoard Screen</Text>
-        </View>
-    );
-}
-function CourseScreen() {
-    return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text>Course Screen</Text>
-        </View>
-    );
-}
-function ContactUsScreen() {
-    return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text>Contact Screen</Text>
-        </View>
-    );
-}
-function SettingsScreen() {
-    return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text>Settings Screen</Text>
-        </View>
-    );
-}
-function SignInScreen() {
-    return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text>SignIn Screen</Text>
+           {/* <Login/> */}
+           <Text>Login</Text>
         </View>
     );
 }
 function SignUpScreen() {
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text>SignUp Screen</Text>
+            <Text>Sign-Up</Text>
         </View>
     );
 }
@@ -58,7 +35,7 @@ function Root(){
 const Stack = createNativeStackNavigator();
 const getIsSignedIn = () => {
     // custom logic
-    return true
+    return false
 };
 
 
@@ -75,8 +52,8 @@ function RouteNavigator() {
                 </>
             ) : (
                 <>
-                    <Stack.Screen name="SignIn" component={SignInScreen} />
-                    <Stack.Screen name="SignUp" component={SignUpScreen} />
+                    <Stack.Screen name="Login" component={LoginScreen} />
+                    <Stack.Screen name="Sign-Up" component={SignUpScreen} />
                 </>
             )}
 

@@ -4,6 +4,7 @@ import RouteNavigator from './src/navigation/rootNavigator';
 import { NavigationContainer } from '@react-navigation/native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { useFonts } from "expo-font";
+import Login from './src/screens/LoginScreen';
 
 
 export default function App() {
@@ -37,9 +38,10 @@ export default function App() {
     
 
     // <View style={styles.container}>
-    //   {/* <Text>Open up App.js to start working on your app!</Text> */}
+    //   {/* <Text>Open up App.js to start working on your app!</Text>
 
-    //   <StatusBar style="auto" />
+    //   <StatusBar style="auto" /> */}
+    //   <Login/>
     // </View>
   );
 }
