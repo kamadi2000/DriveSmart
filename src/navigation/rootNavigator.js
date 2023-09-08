@@ -35,7 +35,7 @@ function Root(){
 const Stack = createNativeStackNavigator();
 const getIsSignedIn = () => {
     // custom logic
-    return false
+    return true
 };
 
 
