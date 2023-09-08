@@ -1,12 +1,14 @@
 import React from 'react';
 import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity} from 'react-native';
 import {Ionicons,FontAwesome5,MaterialIcons,Entypo} from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
-function dashboardScreen() {
+function dashboardScreen({}) {
+    const navigation = useNavigation()
     return (
         <SafeAreaView style={styles.backgroundcontainer}>
 
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('Course')}>
                 <View style={styles.textcomponent}>
                     <Ionicons name="book" size={34} color="black" />
                     <Text style={styles.texts}>Study Materials</Text>
@@ -14,7 +16,7 @@ function dashboardScreen() {
                 </View>
             </TouchableOpacity>
 
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('Road signs')}>
                 <View style={styles.textcomponent}>
                     <FontAwesome5 name="road" size={34} color="black" />
                     <Text style={styles.texts}>Road Signs</Text>
@@ -22,7 +24,7 @@ function dashboardScreen() {
                 </View>
             </TouchableOpacity>
 
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('Practice tests')}>
                 <View style={styles.textcomponent}>
                     <FontAwesome5 name="pen-alt" size={34} color="black" />
                     <Text style={styles.texts}>Practice Test</Text>
@@ -31,7 +33,7 @@ function dashboardScreen() {
             </TouchableOpacity>
 
 
-            <TouchableOpacity onpress={() => {}}>
+            <TouchableOpacity onPress={() => navigation.navigate('Progress tracking')}>
                 <View style={styles.textcomponent}>
                     <Ionicons name="md-bar-chart" size={34} color="black" />
                     <Text style={styles.texts}>Progress Tracking</Text>
@@ -39,7 +41,7 @@ function dashboardScreen() {
                 </View>
             </TouchableOpacity>
             
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('Premium')}>
                 <View style={styles.textcomponent}>
                     <Entypo name="credit-card" size={34} color="black" />
                     <Text style={styles.texts}>Premium</Text>
