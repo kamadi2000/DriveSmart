@@ -4,7 +4,7 @@ import RouteNavigator from './src/navigation/rootNavigator';
 import { NavigationContainer } from '@react-navigation/native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { useFonts } from "expo-font";
-import Login from './src/screens/LoginScreen';
+// import Login from './src/screens/loginScreen';
 
 
 export default function App() {

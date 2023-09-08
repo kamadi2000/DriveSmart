@@ -5,7 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import BottomTabNav from './BottomTabNav';
-import Login from '../screens/LoginScreen';
+// import Login from '../screens/LoginScreen';
 
 
 
