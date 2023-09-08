@@ -2,7 +2,7 @@ import { HorizontalStack, VerticalStack } from "../components/basic/AlignStacks"
 import { Task_button } from "../components/basic/ButtonComponent";
 import { PasswordField, TextField } from "../components/basic/InputField";
 import { BodyText, HeadingText, LabelText, LightText } from "../components/basic/TextComponent";
-import { TouchableWithoutFeedback, View, Keyboard, ScrollView, StyleSheet, Linking } from "react-native";
+import { TouchableWithoutFeedback, View, Keyboard, ScrollView, StyleSheet, Linking, TouchableOpacity } from "react-native";
 import { CARD_COLOR, WIDTH } from "../helpers/constants";
 import { FontAwesome5 } from '@expo/vector-icons';
 
@@ -78,8 +78,11 @@ const Login = () => {
               </View>
             </HorizontalStack>
           </Task_button>
-
+          
+          <TouchableOpacity>
           <LightText>Don't have an account ? Register now.</LightText>
+          </TouchableOpacity>
+          
         </VerticalStack>
       </View>
 

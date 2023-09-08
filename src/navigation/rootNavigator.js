@@ -6,6 +6,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import BottomTabNav from './BottomTabNav';
 import { PRIMARY_COLOR } from '../helpers/constants';
+import SignUp from '../screens/SignUpScreen';
 // import Login from '../screens/LoginScreen';
 
 
@@ -14,15 +15,16 @@ import { PRIMARY_COLOR } from '../helpers/constants';
 function LoginScreen() {
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-           {/* <Login/> */}
-           <Text>Login</Text>
+           <Login/>
+           {/* <Text>Login</Text> */}
         </View>
     );
 }
 function SignUpScreen() {
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text>Sign-Up</Text>
+            <SignUp/>
+            {/* <Text>SignUp</Text> */}
         </View>
     );
 }
@@ -36,7 +38,7 @@ function Root(){
 const Stack = createNativeStackNavigator();
 const getIsSignedIn = () => {
     // custom logic
-    return true
+    return false
 };
 
 
@@ -53,8 +55,9 @@ function RouteNavigator() {
                 </>
             ) : (
                 <>
-                    <Stack.Screen name="Login" component={LoginScreen} />
+                    
                     <Stack.Screen name="Sign-Up" component={SignUpScreen} />
+                    <Stack.Screen name="Login" component={LoginScreen} />
                 </>
             )}
 
