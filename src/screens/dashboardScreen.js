@@ -1,22 +1,15 @@
 import React from 'react';
 import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity} from 'react-native';
-import {Ionicons,FontAwesome5,MaterialIcons} from '@expo/vector-icons';
+import {Ionicons,FontAwesome5,MaterialIcons,Entypo} from '@expo/vector-icons';
 
 function dashboardScreen() {
     return (
         <SafeAreaView style={styles.backgroundcontainer}>
-            <TouchableOpacity onpress={() => {}}>
-                <View style={styles.textcomponent}>
-                    <Ionicons name="md-bar-chart" size={34} color="black" />
-                    <Text style={styles.texts}>Progress Tracking</Text>
-                    <MaterialIcons name="keyboard-arrow-right" size={24} color="black" />
-                </View>
-            </TouchableOpacity>
-            
+
             <TouchableOpacity>
                 <View style={styles.textcomponent}>
-                    <FontAwesome5 name="pen-alt" size={34} color="black" />
-                    <Text style={styles.texts}>Practice Test</Text>
+                    <Ionicons name="book" size={34} color="black" />
+                    <Text style={styles.texts}>Study Materials</Text>
                     <MaterialIcons name="keyboard-arrow-right" size={24} color="black" />
                 </View>
             </TouchableOpacity>
@@ -31,8 +24,25 @@ function dashboardScreen() {
 
             <TouchableOpacity>
                 <View style={styles.textcomponent}>
-                    <Ionicons name="book" size={34} color="black" />
-                    <Text style={styles.texts}>Study Materials</Text>
+                    <FontAwesome5 name="pen-alt" size={34} color="black" />
+                    <Text style={styles.texts}>Practice Test</Text>
+                    <MaterialIcons name="keyboard-arrow-right" size={24} color="black" />
+                </View>
+            </TouchableOpacity>
+
+
+            <TouchableOpacity onpress={() => {}}>
+                <View style={styles.textcomponent}>
+                    <Ionicons name="md-bar-chart" size={34} color="black" />
+                    <Text style={styles.texts}>Progress Tracking</Text>
+                    <MaterialIcons name="keyboard-arrow-right" size={24} color="black" />
+                </View>
+            </TouchableOpacity>
+            
+            <TouchableOpacity>
+                <View style={styles.textcomponent}>
+                    <Entypo name="credit-card" size={34} color="black" />
+                    <Text style={styles.texts}>Premium</Text>
                     <MaterialIcons name="keyboard-arrow-right" size={24} color="black" />
                 </View>
             </TouchableOpacity>
