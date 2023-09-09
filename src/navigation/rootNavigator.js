@@ -53,31 +53,6 @@ function Road_signs(){
     )
 }
 
-function Practice_tests(){
-    return(
-        <View  style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Practice tests</Text>
-        </View>
-        
-    )
-}
-function Progress_tracking(){
-    return(
-        <View  style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-         <Text>Progress tracking</Text>
-        </View>
-       
-    )
-}
-
-function Premium(){
-    return(
-        <View  style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Premium</Text>
-        </View>
-        
-    )
-}
 
 const Stack = createNativeStackNavigator();
 const getIsSignedIn = () => {
@@ -96,10 +71,6 @@ function RouteNavigator() {
                 <>
                     
                     <Stack.Screen name="root" component={Root} options={{ headerShown: false }}/>
-                    <Stack.Screen name='Road signs' component={Road_signs}/>
-                    <Stack.Screen name='Practice tests' component={Practice_tests}/>
-                    <Stack.Screen name='Progress tracking' component={Progress_tracking}/>
-                    <Stack.Screen name='Premium' component={Premium}/>
                     <Stack.Screen name='Content' component={Content} />
                     <Stack.Screen name='Quiz View' component={QuizView} />
                 </>

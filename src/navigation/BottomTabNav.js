@@ -7,11 +7,15 @@ import DashboardScreen from '../screens/dashboardScreen';
 import { PRIMARY_COLOR } from '../utils/colors';
 import UserProfile from '../components/UserProfile';
 import CoursePageScreen from '../screens/courseScreen';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import DashboardStackNav from './DashboardStackNav';
 
-function DashBoardScreen() {
+
+
+function DashBoardStack() {
     return (
-        <DashboardScreen/>
-    );
+       <DashboardStackNav/>
+    )
 }
 function CourseScreen() {
     return (
@@ -40,11 +44,11 @@ const BottomTabNav = () => {
         <Tab.Navigator
             initialRouteName="DashBoard"
             screenOptions={({ route }) => ({
-                headerStyle : {backgroundColor : PRIMARY_COLOR},
-                headerRight : () => (
-                    <UserProfile/>
+                headerStyle: { backgroundColor: PRIMARY_COLOR },
+                headerRight: () => (
+                    <UserProfile />
                 )
-                    
+
                 ,
                 tabBarIcon: ({ focused, color, size }) => {
                     let iconName;
@@ -75,9 +79,10 @@ const BottomTabNav = () => {
         >
             <Tab.Screen
                 name="DashBoard"
-                component={DashBoardScreen}
+                component={DashBoardStack}
                 options={{
                     tabBarLabel: 'Dashboard',
+                    headerShown: false
 
 
                 }} />

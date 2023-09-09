@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity} from 'react-nat
 import {Ionicons,FontAwesome5,MaterialIcons,Entypo} from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
-function dashboardScreen({}) {
+function DashboardScreen({}) {
     const navigation = useNavigation()
     return (
         <SafeAreaView style={styles.backgroundcontainer}>
@@ -16,7 +16,7 @@ function dashboardScreen({}) {
                 </View>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={() => navigation.navigate('Road signs')}>
+            <TouchableOpacity onPress={() => navigation.navigate('RoadSigns')}>
                 <View style={styles.textcomponent}>
                     <FontAwesome5 name="road" size={34} color="black" />
                     <Text style={styles.texts}>Road Signs</Text>
@@ -53,7 +53,7 @@ function dashboardScreen({}) {
     );
 }
 
-export default dashboardScreen;
+export default DashboardScreen;
 
 const styles = StyleSheet.create({
     backgroundcontainer: {
