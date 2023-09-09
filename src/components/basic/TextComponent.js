@@ -11,7 +11,7 @@ export const LightText = ({ children,style }) =>
     </Text>
 
 export const BodyText = ({ children }) =>
-    <Text style={{ fontFamily: 'Poppins_Medium', fontSize: 16 }}>
+    <Text style={{ fontFamily: 'Poppins_Regular', fontSize: 14}}>
         {children}
     </Text>
 
