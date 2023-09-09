@@ -80,7 +80,7 @@ function courseScreen(){
               style={{flex:1,marginBottom:50, width:'100%'}}
               data={headings}
               keyExtractor={(item)=> item.id}
-              renderItem = {(data)=> <Heading item={data.item} />}
+              renderItem = {(data)=> <Heading  item={data.item} />}
             />
     </View>
   )

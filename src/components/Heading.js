@@ -24,12 +24,16 @@ const Heading = ({item}) => {
                     <View style={styles.subHeadingcontainer}>
                         <SubHeading 
                             id = {item.video.videoId}
+                            type="content"
+                            heading= {item.name}
                             name={ item.id +  ".1 Interactive Video" }
                             isCompleted={item.video.status} 
                             isPremium={item.video.isPremium}/>
                         <View style={{backgroundColor:'lightgray', height:1, marginHorizontal:2}}></View>
                         <SubHeading 
                             id = {item.quiz.quizId}
+                            heading= {item.name}
+                            type="quiz"
                             name={item.id + ".2 Quiz" }
                             isCompleted={item.quiz.status} 
                             isPremium={item.quiz.isPremium}/>

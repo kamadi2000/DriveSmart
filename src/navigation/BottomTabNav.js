@@ -15,7 +15,7 @@ function DashBoardScreen() {
 }
 function CourseScreen() {
     return (
-        <CoursePageScreen/>
+        <CoursePageScreen />
     );
 }
 function ContactUsScreen() {
