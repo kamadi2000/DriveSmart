@@ -10,5 +10,4 @@ export const Task_button = ({children,style}) =>
     width : WIDTH * 0.8,
     borderRadius : 13,
     ...style
-
 }}>{children}</TouchableOpacity>
