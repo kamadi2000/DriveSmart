@@ -5,6 +5,7 @@ import QuizViewScreen from '../screens/quizViewScreen'
 import { View , Text } from "react-native";
 import { PRIMARY_COLOR } from "../utils/colors";
 import UserProfile from "../components/UserProfile";
+import ExamScreen from "../screens/examScreen";
 
 function CourseScreen() {
     return <CoursePageScreen />
@@ -19,11 +20,7 @@ function QuizView() {
 }
 
 function ExamView() {
-    return (
-        <View>
-            <Text>Exam</Text>
-        </View>
-    )
+    return <ExamScreen />
 }
 
 const Stack = createNativeStackNavigator()

@@ -1,7 +1,7 @@
 import { View, Text, ScrollView} from 'react-native'
 import React, { useEffect } from 'react'
 import { useRoute } from '@react-navigation/native'
-import { BACKGROUND_COLOR, SECONDARY_COLOR } from '../utils/colors'
+import { BACKGROUND_COLOR } from '../utils/colors'
 
 
 const ContentScreen = () => {
