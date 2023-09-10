@@ -3,6 +3,7 @@ import DashboardScreen from "../screens/dashboardScreen";
 import { PRIMARY_COLOR } from "../utils/colors";
 import UserProfile from "../components/UserProfile";
 import { View, Text } from "react-native";
+import PremiumSreen from "../screens/premiumScreen";
 
 function DashBoardScreen() {
     return (
@@ -34,9 +35,7 @@ function Progress_tracking() {
 
 function Premium() {
     return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text>Premium</Text>
-        </View>
+        <PremiumSreen/>
 
     )
 }

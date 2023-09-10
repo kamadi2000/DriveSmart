@@ -20,3 +20,7 @@ export const LabelText = ({ children , style }) =>
         {children}
     </Text>
 
+export const SubHeadingText = ({ children }) =>
+    <Text style={{ fontFamily: 'Poppins_SemiBold', fontSize: 24 }}>
+        {children}
+    </Text>
