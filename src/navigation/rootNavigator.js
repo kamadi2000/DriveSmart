@@ -6,9 +6,9 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import BottomTabNav from './BottomTabNav';
 import { PRIMARY_COLOR } from '../utils/colors';
+import SignUp from '../screens/signUpScreen';
+import Login from '../screens/loginScreen';
 
-// import SignUp from '../screens/SignUpScreen';
-// import Login from '../screens/LoginScreen';
 
 
 
@@ -34,15 +34,6 @@ function SignUpScreen() {
 function Root(){
     return(
         <BottomTabNav/>
-    )
-}
-
-function Road_signs(){
-    return(
-        <View  style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Road signs</Text>
-        </View>
-        
     )
 }
 

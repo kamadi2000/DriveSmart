@@ -53,11 +53,11 @@ const BottomTabNav = () => {
                 tabBarIcon: ({ focused, color, size }) => {
                     let iconName;
 
-                    if (route.name === 'DashBoard') {
+                    if (route.name === 'DashBoardStack') {
                         iconName = focused
                             ? 'md-home'
                             : 'md-home-outline';
-                    } else if (route.name === 'Course') {
+                    } else if (route.name === 'CourseStack') {
                         iconName = focused ? 'book' : 'book-outline';
                     } else if (route.name === 'Settings') {
                         iconName = focused ? 'settings' : 'settings-outline';
@@ -78,7 +78,7 @@ const BottomTabNav = () => {
 
         >
             <Tab.Screen
-                name="DashBoard"
+                name="DashBoardStack"
                 component={DashBoardStack}
                 options={{
                     tabBarLabel: 'Dashboard',
@@ -87,7 +87,7 @@ const BottomTabNav = () => {
 
                 }} />
             <Tab.Screen
-                name="Course"
+                name="CourseStack"
                 component={CourseStack}
                 options={{
                     tabBarLabel: 'Course',

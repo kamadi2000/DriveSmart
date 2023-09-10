@@ -8,7 +8,7 @@ function DashboardScreen({}) {
     return (
         <SafeAreaView style={styles.backgroundcontainer}>
 
-            <TouchableOpacity onPress={() => navigation.navigate('Course')}>
+            <TouchableOpacity onPress={() => navigation.navigate('CourseStack',{screen:'Course'})}>
                 <View style={styles.textcomponent}>
                     <Ionicons name="book" size={34} color="black" />
                     <Text style={styles.texts}>Study Materials</Text>
