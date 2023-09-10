@@ -6,19 +6,12 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import BottomTabNav from './BottomTabNav';
 import { PRIMARY_COLOR } from '../utils/colors';
-import ContentScreen from '../screens/contentScreen';
-import QuizViewScreen from '../screens/quizViewScreen';
+
 // import SignUp from '../screens/SignUpScreen';
 // import Login from '../screens/LoginScreen';
 
 
-function Content() {
-    return <ContentScreen/>
-}
 
-function QuizView() {
-    return <QuizViewScreen />
-}
 
 
 function LoginScreen() {
@@ -71,8 +64,7 @@ function RouteNavigator() {
                 <>
                     
                     <Stack.Screen name="root" component={Root} options={{ headerShown: false }}/>
-                    <Stack.Screen name='Content' component={Content} />
-                    <Stack.Screen name='Quiz View' component={QuizView} />
+                    
                 </>
             ) : (
                 <>

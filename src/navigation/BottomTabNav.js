@@ -6,7 +6,7 @@ import { BlurView } from 'expo-blur';
 import DashboardScreen from '../screens/dashboardScreen';
 import { PRIMARY_COLOR } from '../utils/colors';
 import UserProfile from '../components/UserProfile';
-import CoursePageScreen from '../screens/courseScreen';
+import CourseStackNav from './CourseStackNav';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import DashboardStackNav from './DashboardStackNav';
 
@@ -17,9 +17,9 @@ function DashBoardStack() {
        <DashboardStackNav/>
     )
 }
-function CourseScreen() {
+function CourseStack() {
     return (
-        <CoursePageScreen />
+        <CourseStackNav />
     );
 }
 function ContactUsScreen() {
@@ -88,9 +88,10 @@ const BottomTabNav = () => {
                 }} />
             <Tab.Screen
                 name="Course"
-                component={CourseScreen}
+                component={CourseStack}
                 options={{
                     tabBarLabel: 'Course',
+                    headerShown: false
 
                 }} />
             <Tab.Screen
