@@ -4,15 +4,21 @@ import { PRIMARY_COLOR } from "../utils/colors";
 import UserProfile from "../components/UserProfile";
 import { View, Text } from "react-native";
 import PremiumSreen from "../screens/premiumScreen";
+import RoadStackNav from "./RoadStackNav";
+import { StackActions } from '@react-navigation/native';
 
-function DashBoardScreen() {
+function DashBoardScreen({navigation}) {
     return (
+        
         <DashboardScreen />
+       
+       
     );
 }
-function RoadSignsScreen() {
+function RoadSignsStackScreen() {
     return (
-        <View></View>
+        <RoadStackNav/>
+    
     )
 }
 
@@ -52,8 +58,11 @@ function DashboardStackNav() {
                     <UserProfile />
             )
         }}>
-            <Stack.Screen name="DashBoard" component={DashBoardScreen} />
-            <Stack.Screen name="RoadSigns" component={RoadSignsScreen} />
+            <Stack.Screen 
+                name="DashBoard" 
+                component={DashBoardScreen}
+                />
+            <Stack.Screen name="RoadSignsStack" component={RoadSignsStackScreen} options={{headerShown : false}}/>
             <Stack.Screen name='Practice tests' component={Practice_tests} />
             <Stack.Screen name='Progress tracking' component={Progress_tracking} />
             <Stack.Screen name='Premium' component={Premium} />

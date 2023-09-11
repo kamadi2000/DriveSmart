@@ -85,7 +85,17 @@ const BottomTabNav = () => {
                     headerShown: false
 
 
-                }} />
+                }}
+                listeners={({ navigation, route }) => ({
+                    tabPress: e => {
+                      console.log(navigation);
+                    //   navigation.dispatch(StackActions.popToTop());
+                      navigation.popToTop();
+        
+                      // Do something with the `navigation` object
+                      navigation.navigate(route.name);
+                    },
+                  })}  />
             <Tab.Screen
                 name="CourseStack"
                 component={CourseStack}
