@@ -49,7 +49,7 @@ const RoadSignsScreen = () => {
                     {/* <TouchableOpacity onPress={() => navigation.navigate('CourseStack', { screen: 'RoadSignsList', params: { type: roadSignType.id } })}>
                         <Card key={roadSignType.id} imgPath={roadSignType.imgPath} title={roadSignType.title} />
                     </TouchableOpacity> */}
-                    <TouchableOpacity onPress={() => navigation.navigate('RoadSignsList')}>
+                    <TouchableOpacity onPress={() => navigation.navigate('RoadSignsStack',{screen :'RoadSignsList' , params : {type : roadSignType.id}})}>
                     <Card key={roadSignType.id} imgPath={roadSignType.imgPath} title={roadSignType.title} />
                     </TouchableOpacity>
                     

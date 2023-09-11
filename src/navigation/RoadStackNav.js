@@ -1,8 +1,11 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import RoadSignsScreen from "../screens/RoadSignsTypeScreen";
+import RoadSignsScreen, { roadSignTypeList } from "../screens/RoadSignsTypeScreen";
 import { BACKGROUND_COLOR, PRIMARY_COLOR } from "../utils/colors";
 import UserProfile from "../components/UserProfile";
-import { View } from "react-native";
+import { ScrollView, Text, TouchableOpacity, View } from "react-native";
+import { useEffect, useState } from "react";
+import { RoadSignsList } from "../screens/RoadSignListScreen";
+import Card from "../components/basic/RoadSignTypeCardComponent";
 
 function RoadSignsTypeScreen(){
     return(
@@ -13,11 +16,29 @@ function RoadSignsTypeScreen(){
     )
 }
 
-function RoadSignsListScreen(){
+function RoadSignsListScreen({route , navigation}){
+    const { type } = route.params
+    console.log({type})
+
+    useEffect(() => {    
+        navigation.setOptions({ title: RoadSignsList.find(item => item.typeId == type).name })
+    }, [type])
+    const signList = RoadSignsList.find(item => item.typeId == type).signList
+    console.log(signList)
     return(
-        <View>
-            
+        <ScrollView style={{paddingTop : 10}}>
+            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+            {signList.map((sign) => 
+                <TouchableOpacity>
+                <Card key={sign.id} imgPath={sign.imgPath} title={sign.title} />
+                </TouchableOpacity>
+
+            )}
+
+           
+        {/* <RoadSignsListScreen/> */}
         </View>
+        </ScrollView>
     )
 }
 
@@ -34,7 +55,7 @@ const RoadStackNav = () => {
         )
     }}>
             <Stack.Screen name="RoadSigns" component={RoadSignsTypeScreen} />
-            <Stack.Screen name="RoadSignsList" component={RoadSignsListScreen} />
+            <Stack.Screen name="RoadSignsList" component={RoadSignsListScreen} options={{title : ''}}/>
             {/* <Stack.Screen name="RoadSignsList" component={SignTypeListScreen} options={{ title: '' }} /> */}
         </Stack.Navigator>
 
