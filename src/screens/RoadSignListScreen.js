@@ -7,9 +7,10 @@ export const RoadSignsList = [
         signList:
             [{
                 id: 1,
-                imgPath: require('../assets/images/roadSigns/WarningSign.png'),
-                title: 'Danger1',
-                description: 'Danger1',
+                imgPath: require('../assets/images/roadSigns/warning.png'),
+                title: 'Crossing with circular motion',
+                description: `is set in n. p. for 50-100 m, outside n. p. for 150-300 m, the sign can be set at a different distance, but the distance is specified in the table. 8.1.1 "Distance to the object".
+                When approaching such an intersection, it is recommended to reduce speed to safe limits and to follow the rules of the intersections.`,
             }
             ]
 

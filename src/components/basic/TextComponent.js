@@ -10,8 +10,8 @@ export const LightText = ({ children,style }) =>
         {children}
     </Text>
 
-export const BodyText = ({ children }) =>
-    <Text style={{ fontFamily: 'Poppins_Regular', fontSize: 14}}>
+export const BodyText = ({ children , style }) =>
+    <Text style={{ fontFamily: 'Poppins_Regular', fontSize: 14,...style}}>
         {children}
     </Text>
 

@@ -18,7 +18,7 @@ const Card = ({ imgPath, title, id }) => {
         }} onPress={() => {}}>
             <HorizontalStack style={{ alignItems: 'center', justifyContent: 'center' }}>
                 <View style={{ flex: 1 / 8, justifyContent: 'center', alignItems: 'center', padding: 10 }}>
-                    <Image source={imgPath} />
+                    <Image source={imgPath} style={{width : 40,height : 35}}/>
                 </View>
                 <View style={{ flex: 6 / 8, justifyContent: 'center', alignItems: 'center' }}>
                     <BodyText>
