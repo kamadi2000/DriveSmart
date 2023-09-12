@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity} from 'react-native';
 import {Ionicons,FontAwesome5,MaterialIcons,Entypo} from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
+import { WIDTH } from '../utils/constants';
 
 function DashboardScreen({}) {
     const navigation = useNavigation()
@@ -16,7 +17,7 @@ function DashboardScreen({}) {
                 </View>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={() => navigation.navigate('RoadSigns')}>
+            <TouchableOpacity onPress={() => navigation.navigate('RoadSignsStack',{screen:'RoadSigns'})}>
                 <View style={styles.textcomponent}>
                     <FontAwesome5 name="road" size={34} color="black" />
                     <Text style={styles.texts}>Road Signs</Text>
