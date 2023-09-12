@@ -14,7 +14,7 @@ import SettingsScreen from '../screens/settingsScreen';
 
 function DashBoardStack() {
     return (
-       <DashboardStackNav/>
+        <DashboardStackNav />
     )
 }
 function CourseStack() {
@@ -44,10 +44,10 @@ const BottomTabNav = () => {
             screenOptions={({ route }) => ({
                 headerStyle: { backgroundColor: PRIMARY_COLOR },
                 headerRight: () => {
-                    if(route.name !=="Settings"){
+                    if (route.name !== "Settings") {
                         return <UserProfile />
                     }
-                    
+
                 }
 
                 ,
@@ -89,14 +89,20 @@ const BottomTabNav = () => {
                 }}
                 listeners={({ navigation, route }) => ({
                     tabPress: e => {
-                      console.log(navigation);
-                    //   navigation.dispatch(StackActions.popToTop());
-                      navigation.popToTop();
-        
-                      // Do something with the `navigation` object
-                      navigation.navigate(route.name);
+                        // console.log(navigation);
+                        console.log()
+                        //   navigation.dispatch(StackActions.popToTop());
+                       
+                        navigation.popToTop();
+
+                            // Do something with the `navigation` object
+                        navigation.navigate(route.name);
+                        
+
+
+
                     },
-                  })}  />
+                })} />
             <Tab.Screen
                 name="CourseStack"
                 component={CourseStack}
