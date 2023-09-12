@@ -9,7 +9,7 @@ import UserProfile from '../components/UserProfile';
 import CourseStackNav from './CourseStackNav';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import DashboardStackNav from './DashboardStackNav';
-
+import SettingsScreen from '../screens/settingsScreen';
 
 
 function DashBoardStack() {
@@ -29,11 +29,9 @@ function ContactUsScreen() {
         </View>
     );
 }
-function SettingsScreen() {
+function SettingsScreenView() {
     return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text>Settings Screen</Text>
-        </View>
+        <SettingsScreen />
     );
 }
 
@@ -45,9 +43,12 @@ const BottomTabNav = () => {
             initialRouteName="DashBoard"
             screenOptions={({ route }) => ({
                 headerStyle: { backgroundColor: PRIMARY_COLOR },
-                headerRight: () => (
-                    <UserProfile />
-                )
+                headerRight: () => {
+                    if(route.name !=="Settings"){
+                        return <UserProfile />
+                    }
+                    
+                }
 
                 ,
                 tabBarIcon: ({ focused, color, size }) => {
@@ -96,9 +97,10 @@ const BottomTabNav = () => {
                 }} />
             <Tab.Screen
                 name='Settings'
-                component={SettingsScreen}
+                component={SettingsScreenView}
                 options={{
                     tabBarLabel: 'Settings',
+                    headerShown: false,
 
                 }} />
             <Tab.Screen
