@@ -12,7 +12,7 @@ const Question = ({no ,question, selected}) => {
 
      
   return (
-    <View style={{padding:5,margin:15,marginBottom:10,borderColor:'lightblue',borderWidth:1,borderRadius:10}}>
+    <View style={{padding:5,margin:15,marginBottom:10}}>
             <Text style={{fontFamily:'Poppins_Light',fontSize:16}}>{no < 10 ? `0${no}.`: `no.` } {question.question}</Text>
             <RadioGroup 
                 containerStyle={{alignItems:"flex-start"}}
