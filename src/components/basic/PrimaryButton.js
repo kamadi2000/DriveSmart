@@ -1,11 +1,20 @@
 import { View, Text, Pressable, StyleSheet } from 'react-native'
 import React from 'react'
 
-const PrimaryButton = ({children, onPress}) => {
+const PrimaryButton = ({children, onPress,disable}) => {
+  let style;
+  if(disable){
+    style ={
+    backgroundColor:"gray"
+    }
+  }
+  else{
+    style ={}
+  }
   
   return (
-  <View  style={styles.outterContainer} >
-    <Pressable style={({pressed})=> pressed ? [styles.innerContainer, styles.pressed] :styles.innerContainer} android_ripple={{color:"black"}}  onPress={onPress}  >
+  <View  style={[styles.outterContainer]} >
+    <Pressable style={({pressed})=> pressed ? [styles.innerContainer, styles.pressed, style] :[styles.innerContainer, style]} android_ripple={{color:"black"}}  onPress={onPress}  >
         <Text style={styles.buttonText}>{children}</Text>
     </Pressable>
     </View>

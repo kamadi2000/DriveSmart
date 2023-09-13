@@ -9,13 +9,14 @@ import UserProfile from '../components/UserProfile';
 import CourseStackNav from './CourseStackNav';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import DashboardStackNav from './DashboardStackNav';
+import SettingsScreen from '../screens/settingsScreen';
 import ContactScreen from '../screens/contactScreen';
 
 
 
 function DashBoardStack() {
     return (
-       <DashboardStackNav/>
+        <DashboardStackNav />
     )
 }
 function CourseStack() {
@@ -28,11 +29,9 @@ function ContactUsScreen() {
         <ContactScreen/>
     );
 }
-function SettingsScreen() {
+function SettingsScreenView() {
     return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text>Settings Screen</Text>
-        </View>
+        <SettingsScreen />
     );
 }
 
@@ -44,9 +43,12 @@ const BottomTabNav = () => {
             initialRouteName="DashBoard"
             screenOptions={({ route }) => ({
                 headerStyle: { backgroundColor: PRIMARY_COLOR },
-                headerRight: () => (
-                    <UserProfile />
-                )
+                headerRight: () => {
+                    if (route.name !== "Settings") {
+                        return <UserProfile />
+                    }
+
+                }
 
                 ,
                 tabBarIcon: ({ focused, color, size }) => {
@@ -84,7 +86,23 @@ const BottomTabNav = () => {
                     headerShown: false
 
 
-                }} />
+                }}
+                listeners={({ navigation, route }) => ({
+                    tabPress: e => {
+                        // console.log(navigation);
+                        console.log()
+                        //   navigation.dispatch(StackActions.popToTop());
+                       
+                        navigation.popToTop();
+
+                            // Do something with the `navigation` object
+                        navigation.navigate(route.name);
+                        
+
+
+
+                    },
+                })} />
             <Tab.Screen
                 name="CourseStack"
                 component={CourseStack}
@@ -94,17 +112,18 @@ const BottomTabNav = () => {
 
                 }} />
             <Tab.Screen
-                name='Settings'
-                component={SettingsScreen}
-                options={{
-                    tabBarLabel: 'Settings',
-
-                }} />
-            <Tab.Screen
                 name='Contact'
                 component={ContactUsScreen}
                 options={{
                     tabBarLabel: 'Contact',
+
+                }} />
+            <Tab.Screen
+                name='Settings'
+                component={SettingsScreenView}
+                options={{
+                    tabBarLabel: 'Settings',
+                    headerShown: false,
 
                 }} />
         </Tab.Navigator>

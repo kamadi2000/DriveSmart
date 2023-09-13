@@ -13,7 +13,9 @@ export default function App() {
       Poppins_SemiBold : require('./src/assets/fonts/Poppins-SemiBold.ttf'),
       Poppins_Medium : require('./src/assets/fonts/Poppins-Medium.ttf'),
       Poppins_Light : require('./src/assets/fonts/Poppins-Light.ttf'),
-      Poppins_Regular : require('./src/assets/fonts/Poppins-Regular.ttf')})
+      Poppins_Regular : require('./src/assets/fonts/Poppins-Regular.ttf'),
+      NotoSerifTamil_Regular : require('./src/assets/fonts/NotoSerifTamil-Regular.ttf')
+    })
   
   // const onLayoutRootView = useCallback(async () => {
   //     //   if (fontsLoaded ) {
