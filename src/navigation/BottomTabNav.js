@@ -10,6 +10,8 @@ import CourseStackNav from './CourseStackNav';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import DashboardStackNav from './DashboardStackNav';
 import SettingsScreen from '../screens/settingsScreen';
+import ContactScreen from '../screens/contactScreen';
+
 
 
 function DashBoardStack() {
@@ -24,9 +26,7 @@ function CourseStack() {
 }
 function ContactUsScreen() {
     return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text>Contact Screen</Text>
-        </View>
+        <ContactScreen/>
     );
 }
 function SettingsScreenView() {

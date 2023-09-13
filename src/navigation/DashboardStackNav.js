@@ -4,6 +4,7 @@ import { BACKGROUND_COLOR, PRIMARY_COLOR } from "../utils/colors";
 import UserProfile from "../components/UserProfile";
 import { View, Text } from "react-native";
 import PremiumSreen from "../screens/premiumScreen";
+import ProgressTrackingScreen from "../screens/progressTrackingScreen";
 import RoadStackNav from "./RoadStackNav";
 import { StackActions } from '@react-navigation/native';
 import PracticeQuizScreen from "../screens/PracticeQuizScreen";
@@ -46,9 +47,7 @@ function Practice_tests() {
 }
 function Progress_tracking() {
     return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text>Progress tracking</Text>
-        </View>
+        <ProgressTrackingScreen/>
 
     )
 }
