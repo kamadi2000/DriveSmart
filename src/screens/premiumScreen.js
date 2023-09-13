@@ -29,11 +29,11 @@ function PremiumScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <SubHeadingText>Unlock Premium Features</SubHeadingText>
-            <BodyText>
+            <BodyText style={{textAlign:'center'}}>
                 Boost your learning today - go premium with a one-time payment of 400.00 LKR. 
                 Get access to exclusive study materials, videos, and interactive quizzes!
             </BodyText>
-            <BodyText>
+            <BodyText style={{fontFamily:"NotoSerifTamil_Regular", textAlign:'center'}}>
                 இன்றே உங்கள் கற்றலை அதிகரிக்கவும் 400.00 LKR ஒரு முறை செலுத்துவதன் மூலம் பிரீமியத்திற்கு செல்லுங்கள். 
                 பிரத்தியேக வீடியோக்கள் மற்றும் வினாடி வினாக்களுக்கான அணுகலைப் பெறுங்கள்!
             </BodyText>
