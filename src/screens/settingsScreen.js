@@ -1,12 +1,16 @@
-import { View, Text, Image } from 'react-native'
-import React from 'react'
+import { View, Text, Image, Modal } from 'react-native'
+import React, { useState } from 'react'
 import { BACKGROUND_COLOR, PRIMARY_COLOR, RIPPLE_COLOR } from '../utils/colors'
 
 import { Ionicons } from '@expo/vector-icons';
 import { ScrollView } from 'react-native';
 import { Pressable,Share } from 'react-native';
 import { Platform, ToastAndroid } from 'react-native';
+import ModalComponent from '../components/ModalComponent';
+
+
 const SettingsScreen = () => {
+    const [isVisible,setIsvisible] = useState(false)
     const shareOurDownloadLink = async ()=>{
         try{
             const ourUrlPlayStore = 'https://play.google.com/store/apps/details?'
@@ -28,6 +32,8 @@ const SettingsScreen = () => {
         }
     }
   return (
+    <>
+    <ModalComponent setIsvisible={setIsvisible} isVisible={isVisible} />
     <View style={{flex:1,backgroundColor:PRIMARY_COLOR,paddingTop:40}}>
         <View style={{alignItems:'center', padding:10}}>
             <Image style={{width:80, height:80}} source={require('../assets/images/profile.png')} />
@@ -41,7 +47,7 @@ const SettingsScreen = () => {
                 style={{paddingTop:20, padding:10}}>
                 
                 <View style={{overflow:'hidden',borderRadius:15,margin:5}}>
-                    <Pressable style={{backgroundColor:'white',padding:15, flexDirection:'row', alignItems:'center'}} android_ripple={{color:'lightgray'}}>
+                    <Pressable onPress={setIsvisible.bind(this, true)} style={{backgroundColor:'white',padding:15, flexDirection:'row', alignItems:'center'}} android_ripple={{color:'lightgray'}}>
                         <Ionicons   name="person-outline" size={25} color="gray" />
                         <Text style={{fontFamily:'Poppins_Regular', fontSize:16, paddingStart:15}}>Profile</Text>
                         <Ionicons style={{flex:1,textAlign:'right'}} name="chevron-forward" size={25} color="gray" />
@@ -96,6 +102,7 @@ const SettingsScreen = () => {
         </View>
       
     </View>
+    </>
   )
 }
 
