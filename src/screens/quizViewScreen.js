@@ -7,7 +7,7 @@ import PrimaryButton from '../components/basic/PrimaryButton'
 const QuizViewScreen = () => {
     const route = useRoute()
     const navigation = useNavigation()
-    const {heading} = route.params
+    const {heading, Qid} = route.params
 
     const handleStartQuiz =()=>{
       Alert.alert(
@@ -20,7 +20,7 @@ const QuizViewScreen = () => {
         {
           text:'Start',
           style:'destructive',
-          onPress:() => navigation.navigate('Exam')
+          onPress:() => navigation.navigate('Exam',{heading:heading, Qid:Qid})
         }]
       )
     }

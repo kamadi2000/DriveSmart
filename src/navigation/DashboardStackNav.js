@@ -8,7 +8,7 @@ import RoadStackNav from "./RoadStackNav";
 import { StackActions } from '@react-navigation/native';
 import PracticeQuizScreen from "../screens/PracticeQuizScreen";
 import PracticeQuiz from "../components/PracticeQuiz";
-import QuizListScreen from "../screens/QuizListScreen";
+// import QuizListScreen from "../screens/QuizListScreen";
 import ExamScreen from "../screens/examScreen";
 
 function DashBoardScreen({navigation}) {

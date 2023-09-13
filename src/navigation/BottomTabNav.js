@@ -112,18 +112,18 @@ const BottomTabNav = () => {
 
                 }} />
             <Tab.Screen
+                name='Contact'
+                component={ContactUsScreen}
+                options={{
+                    tabBarLabel: 'Contact',
+
+                }} />
+            <Tab.Screen
                 name='Settings'
                 component={SettingsScreenView}
                 options={{
                     tabBarLabel: 'Settings',
                     headerShown: false,
-
-                }} />
-            <Tab.Screen
-                name='Contact'
-                component={ContactUsScreen}
-                options={{
-                    tabBarLabel: 'Contact',
 
                 }} />
         </Tab.Navigator>

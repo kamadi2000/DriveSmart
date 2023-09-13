@@ -1,16 +1,17 @@
 import { View, Text, Alert, StyleSheet } from 'react-native'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect,  } from 'react'
 import { BACKGROUND_COLOR } from '../utils/colors'
 import PrimaryButton from '../components/basic/PrimaryButton';
 import ExamHeader from '../components/ExamHeader';
 import Question from '../components/Question';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation ,useRoute} from '@react-navigation/native';
 
 const ExamScreen = () => {
-    
+    const route = useRoute()
     const [questions, setQuestions] = useState([]) // store questions
     const [currentQues,setCurrentQues] = useState(1) // store current question
     const navigation = useNavigation() // navigation
+    const {heading, Qid} = route.params
 
     // restict curretn ques
     if(currentQues < 1){
@@ -293,7 +294,7 @@ const ExamScreen = () => {
 
 
             {/*exam header start*/}
-            <ExamHeader/>
+            <ExamHeader heading={heading}/>
             {/*exam header end*/}
 
             {/*question number panel start*/}
