@@ -2,12 +2,16 @@ import { HorizontalStack, VerticalStack } from "../components/basic/AlignStacks"
 import { Task_button } from "../components/basic/ButtonComponent";
 import { PasswordField, TextField } from "../components/basic/InputField";
 import { BodyText, HeadingText, LabelText, LightText } from "../components/basic/TextComponent";
-import { TouchableWithoutFeedback, View, Keyboard, ScrollView, StyleSheet, Linking, TouchableOpacity } from "react-native";
-import { CARD_COLOR, WIDTH } from "../utils/constants";
+import { TouchableWithoutFeedback, View, Keyboard, ScrollView, StyleSheet, Linking, TouchableOpacity, KeyboardAvoidingView, Platform } from "react-native";
+import { CARD_COLOR, HEIGHT, WIDTH } from "../utils/constants";
 import { FontAwesome5 } from '@expo/vector-icons';
+import GoogleLoginButton from "../components/basic/GoogleLogin";
+import { useNavigation } from "@react-navigation/native";
 
 const SignUp = () => {
+  const navigation = useNavigation()
   return (
+    <ScrollView style={{flex : 1}}>
     <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessibility={false}>
       <View
         style={{
@@ -15,19 +19,21 @@ const SignUp = () => {
           justifyContent: 'center',
           alignItems: 'center',
           margin: 15,
-          backgroundColor: CARD_COLOR
+          // height: HEIGHT,
+          backgroundColor: CARD_COLOR,
+          
         }}
       >
-        <VerticalStack style={{ justifyContent: 'space-evenly' }}>
-          <View style={{ width: 100, height: 100, backgroundColor: 'blue' }}>
-            {/* logo of the app */}
+        <VerticalStack style={{ justifyContent: 'space-evenly', height: HEIGHT, borderRadius: 10 }}>
+          <View style={{  }}>
+          <HeadingText>Sign up</HeadingText>
           </View>
           <TextField label={<LabelText>Name</LabelText>} />
           <TextField label={<LabelText>Email</LabelText>} />
           <PasswordField label={<LabelText>Password</LabelText>} />
           <PasswordField label={<LabelText>Re-enter password</LabelText>} />
-            
-          
+
+
 
           <Task_button>
             <BodyText>SignUp</BodyText>
@@ -53,24 +59,11 @@ const SignUp = () => {
             />
           </HorizontalStack>
 
+          <GoogleLoginButton />
+
           <Task_button>
             <HorizontalStack>
               <View style={{ flex: 1 / 3 }}>
-                <FontAwesome5 name="google" size={22} color="black" />
-              </View>
-              <View>
-                <BodyText>Login with Google</BodyText>
-              </View>
-
-
-
-            </HorizontalStack>
-
-          </Task_button>
-
-          <Task_button>
-            <HorizontalStack>
-              <View style={{flex : 1/3 }}>
                 <FontAwesome5 name="facebook" size={22} color="black" />
               </View>
               <View>
@@ -78,16 +71,17 @@ const SignUp = () => {
               </View>
             </HorizontalStack>
           </Task_button>
-          <LightText style={{textAlign : 'center',fontSize : 10}}>By signing up ,you are agreeing to our terms, Data Policy and Cookies Policy</LightText>
-        
+          <LightText style={{ textAlign: 'center', fontSize: 10 }}>By signing up ,you are agreeing to our terms, Data Policy and Cookies Policy</LightText>
+
           <TouchableOpacity>
-          <LightText>Already have an account ? Login Now.</LightText>
+            <LightText onPress={()=> navigation.navigate('Login')}>Already have an account ? Login Now</LightText>
           </TouchableOpacity>
-          
+
         </VerticalStack>
       </View>
 
     </TouchableWithoutFeedback>
+    </ScrollView>
   )
 }
 

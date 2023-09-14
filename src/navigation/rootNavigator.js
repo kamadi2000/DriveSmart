@@ -6,8 +6,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import BottomTabNav from './BottomTabNav';
 import { PRIMARY_COLOR } from '../utils/colors';
-import Login from '../screens/loginScreen';
 import SignUp from '../screens/signUpScreen';
+import Login from '../screens/loginScreen';
 
 
 
@@ -59,9 +59,10 @@ function RouteNavigator() {
                 </>
             ) : (
                 <>
+                    <Stack.Screen name="Sign-Up" component={SignUpScreen} options={{headerShown: false}} />
+                    <Stack.Screen name="Login" component={LoginScreen} options={{headerShown: false}}/>
                     
-                    <Stack.Screen name="Sign-Up" component={SignUpScreen} />
-                    <Stack.Screen name="Login" component={LoginScreen} />
+                    
                 </>
             )}
 

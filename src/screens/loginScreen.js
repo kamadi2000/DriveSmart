@@ -2,12 +2,17 @@ import { HorizontalStack, VerticalStack } from "../components/basic/AlignStacks"
 import { Task_button } from "../components/basic/ButtonComponent";
 import { PasswordField, TextField } from "../components/basic/InputField";
 import { BodyText, HeadingText, LabelText, LightText } from "../components/basic/TextComponent";
-import { TouchableWithoutFeedback, View, Keyboard, ScrollView, StyleSheet, Linking, TouchableOpacity } from "react-native";
+import { TouchableWithoutFeedback, View, Keyboard, ScrollView, StyleSheet, Linking, TouchableOpacity, KeyboardAvoidingView } from "react-native";
 import { CARD_COLOR } from "../utils/colors";
 import { FontAwesome5 } from '@expo/vector-icons';
+import GoogleLoginButton from "../components/basic/GoogleLogin";
+import { HEIGHT } from "../utils/constants";
+import { useNavigation } from "@react-navigation/native";
 
 const Login = () => {
+  const navigation = useNavigation();
   return (
+    <ScrollView style={{flex : 1}}>
     <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessibility={false}>
       <View
         style={{
@@ -18,9 +23,9 @@ const Login = () => {
           backgroundColor: CARD_COLOR
         }}
       >
-        <VerticalStack style={{ justifyContent: 'space-evenly' }}>
-          <View style={{ width: 100, height: 100, backgroundColor: 'blue' }}>
-            {/* logo of the app */}
+        <VerticalStack style={{ justifyContent: 'space-evenly',height: HEIGHT, borderRadius: 10 }}>
+          <View style={{}}>
+           <HeadingText>Login</HeadingText>
           </View>
           <TextField label={<LabelText>Email</LabelText>} />
 
@@ -53,20 +58,7 @@ const Login = () => {
             />
           </HorizontalStack>
 
-          <Task_button>
-            <HorizontalStack>
-              <View style={{ flex: 1 / 3 }}>
-                <FontAwesome5 name="google" size={22} color="black" />
-              </View>
-              <View>
-                <BodyText>Login with Google</BodyText>
-              </View>
-
-
-
-            </HorizontalStack>
-
-          </Task_button>
+          <GoogleLoginButton/>
 
           <Task_button>
             <HorizontalStack>
@@ -79,7 +71,7 @@ const Login = () => {
             </HorizontalStack>
           </Task_button>
           
-          <TouchableOpacity>
+          <TouchableOpacity onPress={()=> navigation.navigate("Sign-Up")}>
           <LightText>Don't have an account ? Register now.</LightText>
           </TouchableOpacity>
           
@@ -87,6 +79,7 @@ const Login = () => {
       </View>
 
     </TouchableWithoutFeedback>
+    </ScrollView>
   )
 }
 

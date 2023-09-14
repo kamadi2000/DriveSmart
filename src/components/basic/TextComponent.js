@@ -5,8 +5,8 @@ export const HeadingText = ({ children }) =>
         {children}
     </Text>
 
-export const LightText = ({ children,style }) =>
-    <Text style={{ fontFamily: 'Poppins_Light', fontSize: 12,...style }}>
+export const LightText = ({ children,style, ...rest }) =>
+    <Text {...rest} style={{ fontFamily: 'Poppins_Light', fontSize: 12,...style }}>
         {children}
     </Text>
 

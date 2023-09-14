@@ -1,4 +1,6 @@
 import {Dimensions} from 'react-native';
+import { Header } from 'react-native/Libraries/NewAppScreen';
+
 
 export const HEIGHT = Dimensions.get('window').height;
 export const WIDTH = Dimensions.get('window').width;

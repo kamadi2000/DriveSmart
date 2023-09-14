@@ -1,8 +1,10 @@
 {
   "expo": {
+    "scheme": "drivesmart",
     "name": "DriveSmart",
-    "slug": "DriveSmart",
+    "slug": "drivesmart",
     "version": "1.0.0",
+    "owner": "drivesmart",
     "orientation": "default",
     "icon": "./assets/iconn.png",
     "userInterfaceStyle": "light",
@@ -15,16 +17,29 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "lk.drivesmart.app"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-iconn.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "lk.drivesmart.app"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "201729dc-fba5-45c4-865f-de358b8a8303"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/201729dc-fba5-45c4-865f-de358b8a8303"
     }
   }
 }
