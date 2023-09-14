@@ -91,8 +91,8 @@ const ModalComponent = ({isVisible,setIsvisible }) => {
       </View>
 
 
-      <Modal visible={username} transparent={true}>
-        <View style={{flex:1, backgroundColor:'rgba(10,10,10,0.6)', alignItems:'center'}}>
+      <Modal visible={username} animationType="fade" transparent={true}>
+        <View style={{flex:1, backgroundColor:'rgba(10,10,10,0.1)', alignItems:'center'}}>
           <View style={{position:"absolute",bottom:0, width:'100%', backgroundColor:'lightblue', minHeight:150, alignItems:'center', borderTopLeftRadius:10,borderTopRightRadius:10}} >
             <TextInput
               placeholder='user name'
@@ -114,8 +114,8 @@ const ModalComponent = ({isVisible,setIsvisible }) => {
 
 
 
-      <Modal visible={password} transparent={true}>
-        <View style={{flex:1, backgroundColor:'rgba(10,10,10,0.6)', alignItems:'center'}}>
+      <Modal visible={password} animationType="fade" transparent={true}>
+        <View style={{flex:1, backgroundColor:'rgba(10,10,10,0.1)', alignItems:'center'}}>
           <View style={{position:"absolute",bottom:0, width:'100%', backgroundColor:'lightblue', minHeight:150, alignItems:'center', borderTopLeftRadius:10,borderTopRightRadius:10}} >
             <TextInput
               placeholder='current password'
@@ -140,7 +140,7 @@ const ModalComponent = ({isVisible,setIsvisible }) => {
       </Modal>
 
       {/*Select langauge*/}
-      <Modal animationType='slide' visible={language} transparent={true}>
+      <Modal animationType="fade" visible={language} transparent={true}>
         <View style={{flex:1, backgroundColor:'rgba(10,10,10,0.1)', alignItems:'center'}}>
           <View style={{position:"absolute",bottom:0, width:'100%', backgroundColor:'lightblue', minHeight:150, alignItems:'center', borderTopLeftRadius:10,borderTopRightRadius:10}} >
           <RadioGroup 

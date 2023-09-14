@@ -7,6 +7,7 @@ import { ScrollView } from 'react-native';
 import { Pressable,Share } from 'react-native';
 import { Platform, ToastAndroid } from 'react-native';
 import ModalComponent from '../components/ModalComponent';
+import PopOverCommon from '../components/PopOverCommon';
 
 
 const SettingsScreen = () => {
@@ -33,6 +34,11 @@ const SettingsScreen = () => {
     }
   return (
     <>
+    {/* <PopOverCommon>
+        <View>
+            <Text>About</Text>
+        </View>
+    </PopOverCommon> */}
     <ModalComponent setIsvisible={setIsvisible} isVisible={isVisible} />
     <View style={{flex:1,backgroundColor:PRIMARY_COLOR,paddingTop:40}}>
         <View style={{alignItems:'center', padding:10}}>
@@ -41,10 +47,10 @@ const SettingsScreen = () => {
             <Text style={{fontFamily:'Poppins_Medium', fontSize:15}}>Premium Customer</Text>
             <Text style={{fontFamily:'Poppins_Medium', fontSize:15}}>Google: Someone@gmail.com</Text>
         </View>
-        <View style={{flex:1 ,overflow:'hidden',backgroundColor:BACKGROUND_COLOR,borderTopRightRadius:20, borderTopLeftRadius:20}}>
+        <View style={{flex:1 ,backgroundColor:BACKGROUND_COLOR,borderTopRightRadius:20, borderTopLeftRadius:20}}>
             <ScrollView 
                 
-                style={{paddingTop:20, padding:10}}>
+                style={{marginTop:20, marginBottom:50 ,margin:10}}>
                 
                 <View style={{overflow:'hidden',borderRadius:15,margin:5}}>
                     <Pressable onPress={setIsvisible.bind(this, true)} style={{backgroundColor:'white',padding:15, flexDirection:'row', alignItems:'center'}} android_ripple={{color:'lightgray'}}>
