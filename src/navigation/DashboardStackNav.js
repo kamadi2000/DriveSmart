@@ -11,6 +11,7 @@ import PracticeQuizScreen from "../screens/PracticeQuizScreen";
 import PracticeQuiz from "../components/PracticeQuiz";
 // import QuizListScreen from "../screens/QuizListScreen";
 import ExamScreen from "../screens/examScreen";
+import { createStackNavigator } from '@react-navigation/stack';
 
 function DashBoardScreen({navigation}) {
     return (
@@ -20,12 +21,7 @@ function DashBoardScreen({navigation}) {
        
     );
 }
-function RoadSignsStackScreen() {
-    return (
-        <RoadStackNav/>
-    
-    )
-}
+
 
 function Quiz_Screen(){
     return(
@@ -59,7 +55,7 @@ function Premium() {
     )
 }
 
-const Stack = createNativeStackNavigator()
+const Stack = createStackNavigator();
 
 function DashboardStackNav() {
     return (
@@ -76,7 +72,7 @@ function DashboardStackNav() {
                 name="DashBoard" 
                 component={DashBoardScreen}
                 />
-            <Stack.Screen name="RoadSignsStack" component={RoadSignsStackScreen} options={{headerShown : false}}/>
+            <Stack.Screen name="RoadSignsStack" component={RoadStackNav} options={{headerShown : false}}/>
             <Stack.Screen name='Practice tests' component={Practice_tests} />
             <Stack.Screen name='Quiz' component={Quiz_Screen}/>
             <Stack.Screen name='QuizList' component={QuizList}/>
