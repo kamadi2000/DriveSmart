@@ -6,6 +6,7 @@ import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { useEffect, useState } from "react";
 import { RoadSignsList } from "../screens/RoadSignListScreen";
 import RoadSignPopOver from "../components/basic/RoadSignPopView";
+import { HEIGHT } from "../utils/constants";
 
 
 function RoadSignsTypeScreen(){
@@ -18,7 +19,7 @@ function RoadSignsTypeScreen(){
 }
 
 
-function RoadSignsListScreen({route , navigation}){
+export function RoadSignsListScreen({route , navigation}){
     const { type } = route.params
     console.log({type})
 
@@ -28,8 +29,8 @@ function RoadSignsListScreen({route , navigation}){
     const signList = RoadSignsList.find(item => item.typeId == type).signList
     console.log(signList)
     return(
-        <ScrollView style={{paddingTop : 10}}>
-            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <ScrollView contentContainerStyle={{backgroundColor : BACKGROUND_COLOR , height : HEIGHT}}>
+            <View style={{ }}>
             {signList.map((sign) => 
                <RoadSignPopOver key={sign.id} imgPath={sign.imgPath} title={sign.title} description={sign.description}/>
                 
@@ -43,24 +44,24 @@ function RoadSignsListScreen({route , navigation}){
     )
 }
 
-const Stack = createNativeStackNavigator()
-const RoadStackNav = () => {
-    return (
-        <Stack.Navigator 
-            initialRouteName='RoadSigns' 
-            screenOptions={{
-                contentStyle : {backgroundColor : BACKGROUND_COLOR},
-                headerStyle: { backgroundColor: PRIMARY_COLOR },
-                headerRight: () => (
-                    <UserProfile />
-        )
-    }}>
-            <Stack.Screen name="RoadSigns" component={RoadSignsScreen} />
-            <Stack.Screen name="RoadSignsList" component={RoadSignsListScreen} options={{title : ''}}/>
-            {/* <Stack.Screen name="RoadSignsList" component={SignTypeListScreen} options={{ title: '' }} /> */}
-        </Stack.Navigator>
+// const Stack = createNativeStackNavigator()
+// const RoadStackNav = () => {
+//     return (
+//         <Stack.Navigator 
+//             initialRouteName='RoadSigns' 
+//             screenOptions={{
+//                 contentStyle : {backgroundColor : BACKGROUND_COLOR},
+//                 headerStyle: { backgroundColor: PRIMARY_COLOR },
+//                 headerRight: () => (
+//                     <UserProfile />
+//         )
+//     }}>
+//             <Stack.Screen name="RoadSigns" component={RoadSignsScreen}/>
+//             <Stack.Screen name="RoadSignsList" component={RoadSignsListScreen}/>
+//             {/* <Stack.Screen name="RoadSignsList" component={SignTypeListScreen} options={{ title: '' }} /> */}
+//         </Stack.Navigator>
 
-    )
-}
+//     )
+// }
 
-export default RoadStackNav;
+// export default RoadStackNav;

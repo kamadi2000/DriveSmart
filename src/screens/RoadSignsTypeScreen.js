@@ -2,6 +2,8 @@ import Card from "../components/basic/RoadSignTypeCardComponent"
 import warningSign from '../assets/images/roadSigns/WarningSign.png'
 import { ScrollView, View, TouchableOpacity, Text } from "react-native"
 import { useNavigation } from "@react-navigation/native"
+import { BACKGROUND_COLOR } from "../utils/colors"
+import { HEIGHT } from "../utils/constants"
 
 export const roadSignTypeList = [
     {
@@ -31,20 +33,28 @@ export const roadSignTypeList = [
     },
 ]
 
-const roadSignsList = [{
-    id: 1,
-    signTypeId: 1,
-    imgPath: require('../assets/images/roadSigns/WarningSign.png'),
-    title: 'Danger1',
-    description: 'Danger1',
-}
-]
+// const roadSignsList = [{
+//     id: 1,
+//     signTypeId: 1,
+//     imgPath: require('../assets/images/roadSigns/WarningSign.png'),
+//     title: 'Danger1',
+//     description: 'Danger1',
+// }
+// ]
 
 const RoadSignsScreen = () => {
     console.log({ roadSignTypeList })
     const navigation = useNavigation()
     return (
-        <ScrollView style={{ paddingTop: 10}} contentContainerStyle={{display : 'flex',justifyContent : 'center',alignItems : 'center'}}>
+        <ScrollView 
+            contentContainerStyle={{
+                    display : 'flex',
+                    alignItems : 'center',
+                    backgroundColor : BACKGROUND_COLOR,
+                    height : HEIGHT ,
+                    flex : 1,
+                    paddingTop : 10
+                }}>
             {roadSignTypeList[0] && roadSignTypeList.map((roadSignType) => {
                 console.log({ roadSignType })
                 return (
@@ -52,7 +62,7 @@ const RoadSignsScreen = () => {
                         {/* <TouchableOpacity onPress={() => navigation.navigate('CourseStack', { screen: 'RoadSignsList', params: { type: roadSignType.id } })}>
                         <Card key={roadSignType.id} imgPath={roadSignType.imgPath} title={roadSignType.title} />
                     </TouchableOpacity> */}
-                        <TouchableOpacity onPress={() => navigation.navigate('RoadSignsStack', { screen: 'RoadSignsList', params: { type: roadSignType.id } })}>
+                        <TouchableOpacity onPress={() => navigation.navigate('RoadSignsList', { type: roadSignType.id } )}>
                             <Card key={roadSignType.id} imgPath={roadSignType.imgPath} title={roadSignType.title} />
                         </TouchableOpacity>
 

@@ -42,7 +42,8 @@ const BottomTabNav = () => {
         <Tab.Navigator
             initialRouteName="DashBoard"
             screenOptions={({ route }) => ({
-                headerStyle: { backgroundColor: PRIMARY_COLOR },
+                headerStyle: { backgroundColor: PRIMARY_COLOR},
+                headerTitleAlign : 'center',
                 headerRight: () => {
                     if (route.name !== "Settings") {
                         return <UserProfile />

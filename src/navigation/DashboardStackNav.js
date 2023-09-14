@@ -5,13 +5,14 @@ import UserProfile from "../components/UserProfile";
 import { View, Text } from "react-native";
 import PremiumSreen from "../screens/premiumScreen";
 import ProgressTrackingScreen from "../screens/progressTrackingScreen";
-import RoadStackNav from "./RoadStackNav";
+import RoadStackNav, { RoadSignsListScreen } from "./RoadStackNav";
 import { StackActions } from '@react-navigation/native';
 import PracticeQuizScreen from "../screens/PracticeQuizScreen";
 import PracticeQuiz from "../components/PracticeQuiz";
 // import QuizListScreen from "../screens/QuizListScreen";
 import ExamScreen from "../screens/examScreen";
 import { createStackNavigator } from '@react-navigation/stack';
+import RoadSignsScreen from "../screens/RoadSignsTypeScreen";
 
 function DashBoardScreen({navigation}) {
     return (
@@ -72,7 +73,9 @@ function DashboardStackNav() {
                 name="DashBoard" 
                 component={DashBoardScreen}
                 />
-            <Stack.Screen name="RoadSignsStack" component={RoadStackNav} options={{headerShown : false}}/>
+            {/* <Stack.Screen name="RoadSignsStack" component={RoadStackNav} options={{headerShown : false}}/> */}
+            <Stack.Screen name="RoadSigns" component={RoadSignsScreen}/>
+            <Stack.Screen name="RoadSignsList" component={RoadSignsListScreen}/>
             <Stack.Screen name='Practice tests' component={Practice_tests} />
             <Stack.Screen name='Quiz' component={Quiz_Screen}/>
             <Stack.Screen name='QuizList' component={QuizList}/>

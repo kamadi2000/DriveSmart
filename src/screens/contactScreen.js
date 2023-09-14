@@ -2,11 +2,12 @@ import React from 'react';
 import { View, Text, TextInput, Button, StyleSheet, TouchableWithoutFeedback, Keyboard, ScrollView } from 'react-native';
 import { Task_button } from '../components/basic/ButtonComponent';
 import { BodyText, HeadingText } from '../components/basic/TextComponent';
+import { HEIGHT } from '../utils/constants';
 
 
 const ContactUs = () => {
   return (
-    <ScrollView>
+    <ScrollView style={{height : HEIGHT}}>
     <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessibility={false}>
     <View style={styles.container}>
         <View style={styles.contactInfo}>
@@ -47,7 +48,8 @@ const styles = StyleSheet.create({
     padding: 20,
     // justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#EDF3FF'
+    backgroundColor: '#EDF3FF',
+    height : HEIGHT
   },
   heading: {
     fontSize: 20,
