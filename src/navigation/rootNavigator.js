@@ -1,73 +1,66 @@
-import * as React from 'react';
-import { View, Text } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import * as React from "react";
+import { View, Text } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import BottomTabNav from './BottomTabNav';
-import { PRIMARY_COLOR } from '../utils/colors';
-import Login from '../screens/loginScreen';
-import SignUp from '../screens/signUpScreen';
-
-
-
-
-
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import BottomTabNav from "./BottomTabNav";
+import { PRIMARY_COLOR } from "../utils/colors";
+import Login from "../screens/loginScreen";
+import SignUp from "../screens/signUpScreen";
+// import DashboardStackNav from "./DashboardStackNav";
 
 function LoginScreen() {
-    return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-           <Login/>
-           {/* <Text>Login</Text> */}
-        </View>
-    );
+  return (
+    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      <Login />
+      {/* <Text>Login</Text> */}
+    </View>
+  );
 }
 function SignUpScreen() {
-    return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <SignUp/>
-            {/* <Text>SignUp</Text> */}
-        </View>
-    );
+  return (
+    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      <SignUp />
+      {/* <Text>SignUp</Text> */}
+    </View>
+  );
 }
 
-function Root(){
-    return(
-        <BottomTabNav/>
-    )
+function Root() {
+  return <BottomTabNav />;
 }
-
 
 const Stack = createNativeStackNavigator();
 const getIsSignedIn = () => {
-    // custom logic
-    return true
+  // custom logic
+  return true;
 };
 
-
 function RouteNavigator() {
-    const isSignedIn = getIsSignedIn()
+  const isSignedIn = getIsSignedIn();
 
-    return (
-
-        <Stack.Navigator screenOptions={{headerStyle : {backgroundColor : PRIMARY_COLOR}}}>
-            {isSignedIn ? (
-                <>
-                    
-                    <Stack.Screen name="root" component={Root} options={{ headerShown: false }}/>
-                    
-                </>
-            ) : (
-                <>
-                    
-                    <Stack.Screen name="Sign-Up" component={SignUpScreen} />
-                    <Stack.Screen name="Login" component={LoginScreen} />
-                </>
-            )}
-
-        </Stack.Navigator>
-
-    );
+  return (
+    <Stack.Navigator
+      screenOptions={{ headerStyle: { backgroundColor: PRIMARY_COLOR } }}
+    >
+      {isSignedIn ? (
+        <>
+          <Stack.Screen
+            name="root"
+            component={Root}
+            options={{ headerShown: false }}
+          />
+        </>
+      ) : (
+        <>
+          <Stack.Screen name="Login" component={LoginScreen} />
+          <Stack.Screen name="Sign-Up" component={SignUpScreen} />
+          {/* <Stack.Screen name="DashboardStackNav" component={DashboardStackNav} /> */}
+        </>
+      )}
+    </Stack.Navigator>
+  );
 }
 
 export default RouteNavigator;
