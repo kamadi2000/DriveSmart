@@ -13,7 +13,7 @@ function DashboardScreen() {
       <DashboardItem
         icon={<FontAwesome5 name="road" size={34} color="black" />}
         title="Road Signs"
-        navigateTo="RoadSigns"
+        navigateTo="RoadSignsStack"
       />
       <DashboardItem
         icon={<FontAwesome5 name="pen-alt" size={34} color="black" />}

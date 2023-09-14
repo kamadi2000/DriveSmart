@@ -10,7 +10,7 @@ import RoadSignPopOver from "../components/basic/RoadSignPopView";
 
 function RoadSignsTypeScreen(){
     return(
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', width: 100, height: 100, backgroundColor: 'blue' }}>
         <RoadSignsScreen/>
     </View>
         
@@ -30,9 +30,9 @@ function RoadSignsListScreen({route , navigation}){
     return(
         <ScrollView style={{paddingTop : 10}}>
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            {signList.map((sign) => <>
+            {signList.map((sign) => 
                <RoadSignPopOver key={sign.id} imgPath={sign.imgPath} title={sign.title} description={sign.description}/>
-                </>
+                
 
             )}
 
@@ -55,7 +55,7 @@ const RoadStackNav = () => {
                     <UserProfile />
         )
     }}>
-            <Stack.Screen name="RoadSigns" component={RoadSignsTypeScreen} />
+            <Stack.Screen name="RoadSigns" component={RoadSignsScreen} />
             <Stack.Screen name="RoadSignsList" component={RoadSignsListScreen} options={{title : ''}}/>
             {/* <Stack.Screen name="RoadSignsList" component={SignTypeListScreen} options={{ title: '' }} /> */}
         </Stack.Navigator>
