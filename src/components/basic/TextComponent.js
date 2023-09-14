@@ -1,7 +1,7 @@
 import { Text } from "react-native";
 
-export const HeadingText = ({ children }) =>
-    <Text style={{ fontFamily: 'Poppins_SemiBold', fontSize: 32 }}>
+export const HeadingText = ({ children , style,...rest}) =>
+    <Text {...rest} style={{ fontFamily: 'Poppins_SemiBold', fontSize: 32,...style }}>
         {children}
     </Text>
 

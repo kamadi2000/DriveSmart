@@ -1,11 +1,16 @@
 import React from 'react';
-import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
+import { View, Text, TextInput, Button, StyleSheet, TouchableWithoutFeedback, Keyboard, ScrollView } from 'react-native';
+import { Task_button } from '../components/basic/ButtonComponent';
+import { BodyText, HeadingText } from '../components/basic/TextComponent';
+
 
 const ContactUs = () => {
   return (
+    <ScrollView>
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessibility={false}>
     <View style={styles.container}>
         <View style={styles.contactInfo}>
-            <Text style={styles.heading}>Contact Us</Text>
+            <HeadingText style={styles.heading}>Complaints Form</HeadingText>
             <TextInput
                 style={styles.input}
                 placeholder="Your Name"
@@ -19,17 +24,20 @@ const ContactUs = () => {
                 placeholder="Your Message"
                 multiline
             />
-            <Button title="Submit" onPress={() => {}} />
+            {/* <Button title="Submit" onPress={() => {}} /> */}
+            <Task_button><BodyText>Submit</BodyText></Task_button>
         </View>
       
         <View style={styles.contactInfo}>
-            <Text style={styles.heading}>Contact Information</Text>
-            <Text>123 Main Street</Text>
-            <Text>City, State ZIP</Text>
-            <Text>Email: contact@example.com</Text>
-            <Text>Phone: (123) 456-7890</Text>
+            <BodyText style={styles.heading}>Contact Information</BodyText>
+            <BodyText>123 Main Street</BodyText>
+            <BodyText>City, State ZIP</BodyText>
+            <BodyText>Email: contact@example.com</BodyText>
+            <BodyText>Phone: (123) 456-7890</BodyText>
         </View>
     </View>
+    </TouchableWithoutFeedback>
+    </ScrollView>
   );
 };
 
@@ -48,6 +56,7 @@ const styles = StyleSheet.create({
   },
   input: {
     height: 40,
+    borderRadius : 5,
     borderColor: 'gray',
     borderWidth: 1,
     marginBottom: 16,
