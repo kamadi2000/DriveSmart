@@ -15,35 +15,31 @@ import Login from '../screens/loginScreen';
 
 
 function LoginScreen() {
-    return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-           <Login/>
-           {/* <Text>Login</Text> */}
-        </View>
-    );
+  return (
+    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      <Login />
+      {/* <Text>Login</Text> */}
+    </View>
+  );
 }
 function SignUpScreen() {
-    return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <SignUp/>
-            {/* <Text>SignUp</Text> */}
-        </View>
-    );
+  return (
+    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      <SignUp />
+      {/* <Text>SignUp</Text> */}
+    </View>
+  );
 }
 
-function Root(){
-    return(
-        <BottomTabNav/>
-    )
+function Root() {
+  return <BottomTabNav />;
 }
-
 
 const Stack = createNativeStackNavigator();
 const getIsSignedIn = () => {
-    // custom logic
-    return true
+  // custom logic
+  return true;
 };
-
 
 function RouteNavigator() {
     const isSignedIn = getIsSignedIn()
