@@ -24,3 +24,6 @@ export const SubHeadingText = ({ children }) =>
     <Text style={{ fontFamily: 'Poppins_SemiBold', fontSize: 24 }}>
         {children}
     </Text>
+
+export const SinhalaText = ({children , style}) =>
+    <Text style={{ fontFamily : 'NotoSansSinhala',...style}}>{children}</Text>

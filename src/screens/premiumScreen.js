@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, SafeAreaView, Alert } from 'react-native'; 
-import { BodyText, SubHeadingText, LabelText } from "../components/basic/TextComponent";
+import { BodyText, SubHeadingText, LabelText, SinhalaText } from "../components/basic/TextComponent";
 import { Task_button } from "../components/basic/ButtonComponent";
 import Checkbox from 'expo-checkbox';
 
@@ -37,10 +37,10 @@ function PremiumScreen() {
                 இன்றே உங்கள் கற்றலை அதிகரிக்கவும் 400.00 LKR ஒரு முறை செலுத்துவதன் மூலம் பிரீமியத்திற்கு செல்லுங்கள். 
                 பிரத்தியேக வீடியோக்கள் மற்றும் வினாடி வினாக்களுக்கான அணுகலைப் பெறுங்கள்!
             </BodyText>
-            <BodyText style={{textAlign:'center'}}>
+            <SinhalaText style={{textAlign:'center'}}>
                 අදම ඔබේ ඉගෙනීම ඉහළ නංවන්න - වාරිකය 400/= කට පමණයි. 
                 සුවිශේෂී අධ්‍යයන ද්‍රව්‍ය, වීඩියෝ සහ අන්තර්ක්‍රියාකාරී ප්‍රශ්නාවලිය වෙත ප්‍රවේශය ලබා ගන්න!
-            </BodyText>
+            </SinhalaText>
       <View style={styles.section}>
         <Checkbox style={styles.checkbox} value={isChecked} onValueChange={setChecked} />
         <LabelText>Agree with terms, conditions, and refund policy</LabelText>

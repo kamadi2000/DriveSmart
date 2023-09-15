@@ -16,7 +16,9 @@ export default function App() {
       Poppins_Medium : require('./src/assets/fonts/Poppins-Medium.ttf'),
       Poppins_Light : require('./src/assets/fonts/Poppins-Light.ttf'),
       Poppins_Regular : require('./src/assets/fonts/Poppins-Regular.ttf'),
-      NotoSerifTamil_Regular : require('./src/assets/fonts/NotoSerifTamil-Regular.ttf')
+      NotoSerifTamil_Regular : require('./src/assets/fonts/NotoSerifTamil-Regular.ttf'),
+      NotoSansSinhala : require('./src/assets/fonts/NotoSansSinhala.ttf')
+
     })
   
   // const onLayoutRootView = useCallback(async () => {
