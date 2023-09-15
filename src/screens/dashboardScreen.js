@@ -42,6 +42,7 @@ const styles = StyleSheet.create({
     rowGap: 20,
     padding: 20,
     paddingTop: 50,
+    margin : 20,
     backgroundColor: '#EDF3FF',
   },
 });

@@ -7,12 +7,13 @@ import PremiumSreen from "../screens/premiumScreen";
 import ProgressTrackingScreen from "../screens/progressTrackingScreen";
 import { StackActions } from '@react-navigation/native';
 import PracticeQuizScreen from "../screens/PracticeQuizScreen";
-import PracticeQuiz from "../components/PracticeQuiz";
+// import PracticeQuiz from "../components/PracticeQuiz";
 // import QuizListScreen from "../screens/QuizListScreen";
 import ExamScreen from "../screens/examScreen";
 import { createStackNavigator } from '@react-navigation/stack';
 import RoadSignsScreen from "../screens/RoadSignsTypeScreen";
 import RoadSignsListScreen from '../screens/RoadSignListScreen'
+import QuizViewScreen from "../screens/quizViewScreen";
 
 
 function DashBoardScreen({navigation}) {
@@ -27,7 +28,7 @@ function DashBoardScreen({navigation}) {
 
 function Quiz_Screen(){
     return(
-        <PracticeQuiz/>
+        <QuizViewScreen/>
     )
 }
 function QuizList(){
@@ -63,16 +64,17 @@ function DashboardStackNav() {
     return (
         <Stack.Navigator 
             initialRouteName='DashBoard' 
-            screenOptions={{
-                contentStyle : {backgroundColor : BACKGROUND_COLOR},
+            screenOptions= {({route}) =>({
+                cardStyle : {backgroundColor : BACKGROUND_COLOR},
                 headerStyle: { backgroundColor: PRIMARY_COLOR },
                 headerRight: () => (
                     <UserProfile />
             )
-        }}>
+        })}>
             <Stack.Screen 
                 name="DashBoard" 
                 component={DashBoardScreen}
+                options={{title : 'Dashboard'}}
                 />
             {/* <Stack.Screen name="RoadSignsStack" component={RoadStackNav} options={{headerShown : false}}/> */}
             <Stack.Screen name="RoadSigns" component={RoadSignsScreen}/>

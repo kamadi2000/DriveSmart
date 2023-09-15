@@ -1,7 +1,7 @@
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import Card from "../components/basic/RoadSignTypeCardComponent";
-import PracticeQuiz from "../components/PracticeQuiz";
-import { useNavigation } from "@react-navigation/native";
+// import PracticeQuiz from "../components/PracticeQuiz";
+import { useNavigation, useRoute } from "@react-navigation/native";
 
 const quizList = [
     {
@@ -35,7 +35,7 @@ const PracticeQuizScreen = () => {
     return (
         <ScrollView contentContainerStyle={{justifyContent : 'center',alignItems : 'center',paddingTop:10}}>
             {quizList.map((test)=>
-            <TouchableOpacity key={test.id} onPress={() => navigation.navigate('Quiz')}>
+            <TouchableOpacity key={test.id} onPress={() => navigation.navigate('Quiz',{heading : test.title})}>
                 <Card  title={test.title}/>
             </TouchableOpacity>
             )}

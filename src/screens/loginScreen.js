@@ -37,20 +37,21 @@ const Login = () => {
 
   const handleLogin = async () => {
     // Construct your login request body
-    dispatch(login({loggedIn : true , token : "112344"}))
+    // dispatch(login({loggedIn : true , token : "112344"}))
     const requestBody = {
       email: email,
       password: password,
     };
 
     // Replace 'YOUR_LOGIN_URL' with the actual URL where you want to send the login request
-    const loginUrl = BACKEND_URL
+    const loginUrl = BACKEND_URL + "/auth/loginApp"
 
     // Send the login request using the fetch API
     await fetch(loginUrl, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        "accept" : "application/json"
       },
       body: JSON.stringify(requestBody),
     })
@@ -58,7 +59,7 @@ const Login = () => {
         if (response.ok) {
           // Login successful, you can navigate to another screen or perform necessary actions
           console.log("Login successful");
-          console.log(response);
+          // console.log(response);
           // Add your navigation logic here
         } else {
           // Login failed, handle the error

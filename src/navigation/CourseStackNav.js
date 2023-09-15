@@ -3,7 +3,7 @@ import CoursePageScreen from '../screens/courseScreen';
 import ContentScreen from '../screens/contentScreen'
 import QuizViewScreen from '../screens/quizViewScreen'
 import { View , Text } from "react-native";
-import { PRIMARY_COLOR } from "../utils/colors";
+import { BACKGROUND_COLOR, PRIMARY_COLOR } from "../utils/colors";
 import UserProfile from "../components/UserProfile";
 import ExamScreen from "../screens/examScreen";
 
@@ -30,7 +30,10 @@ function CourseStackNav(){
         <Stack.Navigator
             initialRouteName="Course"
             screenOptions={({ route }) => ({
+                // cardStyle : {backgroundColor : BACKGROUND_COLOR},
+                contentStyle : {backgroundColor : BACKGROUND_COLOR},
                 headerStyle: { backgroundColor: PRIMARY_COLOR },
+                
                 headerRight: ()=> route.name === 'Course' ? (
                     <UserProfile />
                 ) : null, // Hide the profile for other screens

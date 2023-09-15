@@ -1,4 +1,4 @@
-import { View, Text, Alert, StyleSheet } from 'react-native'
+import { View, Text, Alert, StyleSheet, SafeAreaView } from 'react-native'
 import React, { useState, useEffect,  } from 'react'
 import { BACKGROUND_COLOR } from '../utils/colors'
 import PrimaryButton from '../components/basic/PrimaryButton';
@@ -247,7 +247,7 @@ const ExamScreen = () => {
             else{
                 // confrimation alert
                 Alert.alert(
-                    "Sumit exam paper",
+                    "Submit exam paper",
                     "Are you sure you want to submit your exam paper? Double-check your answers before proceeding.",
                     [
                     {
@@ -289,6 +289,7 @@ const ExamScreen = () => {
     
     
   return (
+    <SafeAreaView style={{display : 'flex',flex : 1}}>
     <View style={styles.outContainer}>
         <View   style={styles.innerContainer}>
 
@@ -317,7 +318,7 @@ const ExamScreen = () => {
 
 
             {/*bottom button pannel start*/}
-            <View style={{ flexDirection:'row', justifyContent:'space-between' }}>
+            <View style={{ flexDirection:'row', justifyContent:'space-between'}}>
                 <View style={{flex:1,maxWidth:200}}>
                     <PrimaryButton  disable={ currentQues==1} onPress={handleClick.bind(this, "previous")} >
                         <Text style={{fontFamily:'Poppins_Medium',fontSize:15}}>Previous</Text>
@@ -333,6 +334,7 @@ const ExamScreen = () => {
 
         </View>
     </View>
+    </SafeAreaView>
   )
 }
 
@@ -365,7 +367,7 @@ const styles = StyleSheet.create({
         minWidth:60,
         margin:2,
         marginVertical:0, 
-        maxWidth:'50', 
+        maxWidth:50, 
         padding:8, 
         textAlign:'center'
     }
