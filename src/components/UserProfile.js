@@ -72,7 +72,8 @@ const UserProfile = () => {
                 <TouchableOpacity 
                     style={styles.menuItem}
                     onPress={() =>
-                        navigation.navigate("Settings")
+                        {setShowPopover(false)
+                        navigation.navigate("Settings")}
                         // AsyncStorage.removeItem("authToken")
                     }>
                         <BodyText>Log out</BodyText>

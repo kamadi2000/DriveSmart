@@ -30,8 +30,8 @@ import GoogleLoginButton from "../components/basic/GoogleLogin";
 const Login = () => {
   const navigation = useNavigation();
 
-  let [email, setEmail] = useState("gchoshanmadawa@gmail.com");
-  const [password, setPassword] = useState("1h379202");
+  let [email, setEmail] = useState("someone@gmail.com");
+  const [password, setPassword] = useState("pwd123");
 
   const dispatch = useDispatch()
 

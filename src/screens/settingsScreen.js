@@ -10,6 +10,7 @@ import ModalComponent from '../components/ModalComponent';
 import PopOverCommon from '../components/PopOverCommon';
 import {useDispatch} from 'react-redux'
 import { logout } from '../redux/userSlice';
+import AboutUsPopOver from '../components/AboutUsPopOver';
 
 const SettingsScreen = () => {
     const dispatch = useDispatch();
@@ -79,10 +80,7 @@ const SettingsScreen = () => {
                 </Pressable>
                 </View>
                 <View style={{overflow:'hidden',borderRadius:15,margin:5}}>
-                <Pressable style={{backgroundColor:'white',padding:15, flexDirection:'row', alignItems:'center'}} android_ripple={{color:'lightgray'}}>
-                    <Ionicons   name="help-circle-outline" size={30} color="gray" />
-                    <Text style={{fontFamily:'Poppins_Regular', fontSize:16, paddingStart:15}}>About</Text>
-                </Pressable>
+                <AboutUsPopOver/>
                 </View>
                 <View style={{overflow:'hidden',borderRadius:15,margin:5}}>
                 <Pressable style={{backgroundColor:'white',padding:15, flexDirection:'row', alignItems:'center'}} android_ripple={{color:'lightgray'}}>
