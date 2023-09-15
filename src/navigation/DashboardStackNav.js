@@ -5,7 +5,6 @@ import UserProfile from "../components/UserProfile";
 import { View, Text } from "react-native";
 import PremiumSreen from "../screens/premiumScreen";
 import ProgressTrackingScreen from "../screens/progressTrackingScreen";
-import RoadStackNav, { RoadSignsListScreen } from "./RoadStackNav";
 import { StackActions } from '@react-navigation/native';
 import PracticeQuizScreen from "../screens/PracticeQuizScreen";
 import PracticeQuiz from "../components/PracticeQuiz";
@@ -13,6 +12,8 @@ import PracticeQuiz from "../components/PracticeQuiz";
 import ExamScreen from "../screens/examScreen";
 import { createStackNavigator } from '@react-navigation/stack';
 import RoadSignsScreen from "../screens/RoadSignsTypeScreen";
+import RoadSignsListScreen from '../screens/RoadSignListScreen'
+
 
 function DashBoardScreen({navigation}) {
     return (

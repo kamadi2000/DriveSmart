@@ -1,4 +1,9 @@
 import { roadSignTypeList } from './RoadSignsTypeScreen';
+import RoadSignPopOver from "../components/basic/RoadSignPopView";
+import { useEffect } from 'react';
+import { ScrollView, View } from 'react-native';
+import { BACKGROUND_COLOR } from '../utils/colors';
+import { HEIGHT } from '../utils/constants';
 
 export const RoadSignsList = [
     {
@@ -69,3 +74,30 @@ export const RoadSignsList = [
     },
 
 ]
+
+const RoadSignsListScreen = ({route , navigation}) => {
+    const { type } = route.params
+    console.log({type})
+
+    useEffect(() => {    
+        navigation.setOptions({ title: RoadSignsList.find(item => item.typeId == type).name })
+    }, [type])
+    const signList = RoadSignsList.find(item => item.typeId == type).signList
+    console.log(signList)
+    return(
+        <ScrollView contentContainerStyle={{backgroundColor : BACKGROUND_COLOR , height : HEIGHT}}>
+            <View style={{ }}>
+            {signList.map((sign) => 
+               <RoadSignPopOver key={sign.id} imgPath={sign.imgPath} title={sign.title} description={sign.description}/>
+                
+
+            )}
+
+           
+        {/* <RoadSignsListScreen/> */}
+        </View>
+        </ScrollView>
+    )
+}
+
+export default RoadSignsListScreen;
