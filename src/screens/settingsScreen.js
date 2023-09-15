@@ -8,9 +8,11 @@ import { Pressable,Share } from 'react-native';
 import { Platform, ToastAndroid } from 'react-native';
 import ModalComponent from '../components/ModalComponent';
 import PopOverCommon from '../components/PopOverCommon';
-
+import {useDispatch} from 'react-redux'
+import { logout } from '../redux/userSlice';
 
 const SettingsScreen = () => {
+    const dispatch = useDispatch();
     const [isVisible,setIsvisible] = useState(false)
     const shareOurDownloadLink = async ()=>{
         try{
@@ -95,7 +97,7 @@ const SettingsScreen = () => {
                 </Pressable>
                 </View>
                 <View style={{overflow:'hidden',borderRadius:15,margin:5}}>
-                <Pressable style={{backgroundColor:'white',padding:15, flexDirection:'row', alignItems:'center'}} android_ripple={{color:'lightgray'}}>
+                <Pressable style={{backgroundColor:'white',padding:15, flexDirection:'row', alignItems:'center'}} android_ripple={{color:'lightgray'}} onPress={()=>dispatch(logout())}>
                     <Ionicons   name="log-out-outline" size={30} color="black" />
                     <Text style={{fontFamily:'Poppins_Regular', fontSize:16, paddingStart:15}}>Log out</Text>
                 </Pressable>

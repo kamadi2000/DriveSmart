@@ -5,8 +5,13 @@ import { BodyText, LabelText } from "./basic/TextComponent";
 import { WIDTH } from "../utils/constants";
 import { useNavigation } from "@react-navigation/native";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { login, logout } from "../redux/userSlice";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+
 
 const UserProfile = () => {
+    const dispatch = useDispatch();
     const [showPopover, setShowPopover] = useState(false);
     const navigation = useNavigation()
     return (
@@ -66,10 +71,10 @@ const UserProfile = () => {
                 />
                 <TouchableOpacity 
                     style={styles.menuItem}
-                    onPress={() => {
-                        setShowPopover(false)
-                        navigation.navigate("Login")
-                    }}>
+                    onPress={() =>
+                        navigation.navigate("Settings")
+                        // AsyncStorage.removeItem("authToken")
+                    }>
                         <BodyText>Log out</BodyText>
                 </TouchableOpacity>
             </View>

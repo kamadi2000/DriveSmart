@@ -4,6 +4,8 @@ import RouteNavigator from './src/navigation/rootNavigator';
 import { NavigationContainer } from '@react-navigation/native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { useFonts } from "expo-font";
+import { Provider } from 'react-redux';
+import store from './src/redux/store'
 // import Login from './src/screens/loginScreen';
 
 
@@ -30,13 +32,14 @@ export default function App() {
     
   return (
     
-      
+      <Provider store={store}>
       <SafeAreaProvider>
         <StatusBar/>
         <NavigationContainer>
         <RouteNavigator /> 
         </NavigationContainer>
       </SafeAreaProvider>
+      </Provider>
       
     
 

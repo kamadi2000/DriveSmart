@@ -8,6 +8,8 @@ import BottomTabNav from './BottomTabNav';
 import { PRIMARY_COLOR } from '../utils/colors';
 import SignUp from '../screens/signUpScreen';
 import Login from '../screens/loginScreen';
+import { useSelector} from 'react-redux'
+import { selectIsUserLoggedIn } from '../redux/userSlice';
 
 
 
@@ -36,18 +38,17 @@ function Root() {
 }
 
 const Stack = createNativeStackNavigator();
-const getIsSignedIn = () => {
-  // custom logic
-  return true;
-};
+
 
 function RouteNavigator() {
-    const isSignedIn = getIsSignedIn()
-
+    
+    const loggedIn = useSelector(selectIsUserLoggedIn)
+    console.log({loggedIn})
+      
     return (
 
         <Stack.Navigator screenOptions={{headerStyle : {backgroundColor : PRIMARY_COLOR}}}>
-            {isSignedIn ? (
+            {loggedIn ? (
                 <>
                     
                     <Stack.Screen name="root" component={Root} options={{ headerShown: false }}/>
@@ -55,8 +56,9 @@ function RouteNavigator() {
                 </>
             ) : (
                 <>
-                    <Stack.Screen name="Sign-Up" component={SignUpScreen} options={{headerShown: false}} />
                     <Stack.Screen name="Login" component={LoginScreen} options={{headerShown: false}}/>
+                    <Stack.Screen name="Sign-Up" component={SignUpScreen} options={{headerShown: false}} />
+                    
                     
                     
                 </>

@@ -13,6 +13,7 @@ import { FontAwesome5 } from "@expo/vector-icons";
 import { TextField, PasswordField } from "../components/basic/InputField";
 import {
   BodyText,
+  HeadingText,
   LabelText,
   LightText,
 } from "../components/basic/TextComponent";
@@ -21,6 +22,10 @@ import DashboardScreen from "./dashboardScreen";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useNavigation } from "@react-navigation/native";
 import { HorizontalStack, VerticalStack } from "../components/basic/AlignStacks";
+import { BACKEND_URL, HEIGHT } from "../utils/constants";
+import { useDispatch } from "react-redux";
+import { login } from "../redux/userSlice";
+import GoogleLoginButton from "../components/basic/GoogleLogin";
 
 const Login = () => {
   const navigation = useNavigation();
@@ -28,16 +33,18 @@ const Login = () => {
   let [email, setEmail] = useState("gchoshanmadawa@gmail.com");
   const [password, setPassword] = useState("1h379202");
 
+  const dispatch = useDispatch()
+
   const handleLogin = async () => {
     // Construct your login request body
+    dispatch(login({loggedIn : true , token : "112344"}))
     const requestBody = {
       email: email,
       password: password,
     };
 
     // Replace 'YOUR_LOGIN_URL' with the actual URL where you want to send the login request
-    const loginUrl =
-      "https://a95d-2401-dd00-10-20-523-5fe1-1b3-64f.ngrok.io/api/auth/loginApp";
+    const loginUrl = BACKEND_URL
 
     // Send the login request using the fetch API
     await fetch(loginUrl, {
@@ -60,11 +67,13 @@ const Login = () => {
         return response.json();
       })
       .then((data) => {
-        console.log('Hi');
+        // console.log('Hi');
         console.log({ data });
         if (data && data.token) {
           // Store the token securely using AsyncStorage or any other secure storage method
           AsyncStorage.setItem("authToken", data.token);
+          dispatch(login({loggedIn : true , token : data.token}))
+
           console.log("data stored");
           // navigation.navigate("DashboardStackNav");
           // Navigate to the dashboard or another authorized page
