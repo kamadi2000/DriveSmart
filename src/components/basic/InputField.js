@@ -7,9 +7,11 @@ import { WIDTH } from "../../utils/constants";
 export const PasswordField = ({ label, value, onChangeText }) => {
   const [cont, setCont] = useState("");
   const [show, setShow] = useState(false);
+  const [focused, setFocused] = useState(false)
   return (
     <View style={{ height: 40, width: WIDTH * 0.8 }}>
       <FloatingLabelInput
+        autoCapitalize="none"
         label={label}
         isPassword
         staticLabel
@@ -42,7 +44,7 @@ export const PasswordField = ({ label, value, onChangeText }) => {
   );
 };
 
-export const TextField = ({ label, value, onChangeText }) => {
+export const TextField = ({ label, value, onChangeText, onEndEditing ,...props }) => {
   // const [cont, setCont] = useState('');
   const [show, setShow] = useState(false);
   return (
@@ -71,6 +73,7 @@ export const TextField = ({ label, value, onChangeText }) => {
           paddingHorizontal: 10,
         }}
         onChangeText={onChangeText}
+        onEndEditing={onEndEditing}
       />
     </View>
   );
