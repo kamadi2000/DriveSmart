@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useState } from "react";
 import { login } from "../redux/userSlice";
+import responseHandler from "./helpers";
 
 const useAuth = () => {
     const [authenticated, setAuthenticated] = useState(false);
@@ -26,28 +27,21 @@ const useAuth = () => {
           },
           body: JSON.stringify(requestBody),
         })
-          .then((response) => {
-            if (response.ok) {
-              console.log("Login successful");// Login successful, you can navigate to another screen or perform necessary actions
-              // console.log(response);
-            } else {
-              // Login failed, handle the error
-              console.error("Login failed");
+          .then((response) => response.json())
+          .then(responseHandler(
+            (data) => {
+              console.log({ data });
+              if (data && data.token) {
+                // Store the token securely using AsyncStorage or any other secure storage method
+                // AsyncStorage.setItem("authToken", data.token);
+                // dispatch(login({loggedIn : true , token : data.token}))
+      
+                // console.log("data stored");
+                // navigation.navigate("DashboardStackNav");
+                // Navigate to the dashboard or another authorized page
+              }
             }
-            return response.json();
-          })
-          .then((data) => {
-            console.log({ data });
-            if (data && data.token) {
-              // Store the token securely using AsyncStorage or any other secure storage method
-              AsyncStorage.setItem("authToken", data.token);
-              dispatch(login({loggedIn : true , token : data.token}))
-    
-              console.log("data stored");
-              // navigation.navigate("DashboardStackNav");
-              // Navigate to the dashboard or another authorized page
-            }
-          })
+            ))
           .catch((error) => {
             // Handle network errors or other exceptions
             console.error("Login error:", error);
@@ -71,28 +65,20 @@ const useAuth = () => {
             },
             body: JSON.stringify(requestBody),
           })
-          .then((response) => {
-            if (response.ok) {
-              console.log("Login successful");// Login successful, you can navigate to another screen or perform necessary actions
-              // console.log(response);
-            } else {
-              // Login failed, handle the error
-              console.error("Login failed");
+          .then((response) => response.json())
+          .then(responseHandler(
+            (data) => {
+              console.log({ data });
+              if (data && data.token) {
+                AsyncStorage.setItem("authToken", data.token);
+                // navigation.navigate("OTP")
+                dispatch(login({loggedIn : true , token : data.token}))     
+                console.log("data stored");
+              }
+            }, () => {
+              
             }
-            return response.json();
-          })
-          .then((data) => {
-            if (data && data.token) {
-              // Store the token securely using AsyncStorage or any other secure storage method
-              AsyncStorage.setItem("authToken", data.token);
-              console.log(data.token)
-              dispatch(login({loggedIn : true , token : data.token}))
-    
-              console.log("data stored");
-              // navigation.navigate("DashboardStackNav");
-              // Navigate to the dashboard or another authorized page
-            }
-          })
+            ))
           .catch((error) => {
             // Handle network errors or other exceptions
             console.error("Login error:", error);

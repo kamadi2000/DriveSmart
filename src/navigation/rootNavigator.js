@@ -10,6 +10,7 @@ import SignUp from '../screens/signUpScreen';
 import Login from '../screens/loginScreen';
 import { useSelector} from 'react-redux'
 import { selectIsUserLoggedIn } from '../redux/userSlice';
+import OTPScreen from '../screens/otpScreen';
 
 
 
@@ -58,6 +59,7 @@ function RouteNavigator() {
                 <>
                     <Stack.Screen name="Login" component={LoginScreen} options={{headerShown: false}}/>
                     <Stack.Screen name="Sign-Up" component={SignUpScreen} options={{headerShown: false}} />
+                    <Stack.Screen name='OTP' component={OTPScreen} options={{headerShown : false}}/>
                     
                     
                     
