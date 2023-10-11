@@ -1,15 +1,30 @@
 import { useState } from "react"
-import { HeadingText, LabelText, LightText } from "../components/basic/TextComponent";
+import { BodyText, HeadingText, LabelText, LightText } from "../components/basic/TextComponent";
 import { Task_button } from "../components/basic/ButtonComponent";
 import { Keyboard, TouchableWithoutFeedback, View } from "react-native";
 import { OTPField } from "../components/basic/InputField";
 import { HEIGHT, WIDTH } from "../utils/constants";
 import { CARD_COLOR } from "../utils/colors";
+import useAuth from "../apis/auth";
+import { useSelector } from "react-redux";
+import { login, selectUserToken } from "../redux/userSlice";
 
 
 const OTPScreen = ({ email }) => {
     const [otpCode, setOtpCode] = useState('');
     const [isPinReady, setIsPinReady] = useState(false)
+    const { handleVerification } = useAuth()
+    const token = useSelector(selectUserToken)
+    console.log({token})
+    const handlePress = () => {
+        if (otpCode.length === 4){
+            return handleVerification({token,otpCode})
+        }else{
+            return console.log("Otp code is not  complete.")
+            
+        }
+        
+    }
 
     return (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessibility={false}>
@@ -21,8 +36,10 @@ const OTPScreen = ({ email }) => {
                 <OTPField
                     onChangeNumber={(text) => setOtpCode(text)}
                     number={otpCode} />
-                <Task_button onPress={()=> console.log(otpCode)}>
-                    <LabelText>Verify code</LabelText>
+                <Task_button onPress={()=> {
+                            Keyboard.dismiss()
+                            handlePress()}}>
+                    <BodyText>Verify code</BodyText>
                 </Task_button>
                 <LightText>{`Didn't receive the OTP?`}</LightText>
                 <LightText></LightText>

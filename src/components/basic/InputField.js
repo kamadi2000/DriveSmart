@@ -90,6 +90,8 @@ export const OTPField = ({onChangeNumber, number}) => {
           margin: 20,
           borderWidth: 1,
           borderColor : PRIMARY_COLOR,
+          width : 80,
+          textAlign : 'center',
           padding: 10,
           borderRadius : 5}}
         onChangeText={onChangeNumber}

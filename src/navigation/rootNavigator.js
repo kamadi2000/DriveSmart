@@ -54,12 +54,15 @@ function RouteNavigator() {
                     
                     <Stack.Screen name="root" component={Root} options={{ headerShown: false }}/>
                     
+                    
                 </>
             ) : (
                 <>
                     <Stack.Screen name="Login" component={LoginScreen} options={{headerShown: false}}/>
                     <Stack.Screen name="Sign-Up" component={SignUpScreen} options={{headerShown: false}} />
                     <Stack.Screen name='OTP' component={OTPScreen} options={{headerShown : false}}/>
+                    
+                    
                     
                     
                     
