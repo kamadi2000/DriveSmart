@@ -5,6 +5,7 @@ import { useState } from "react";
 import { login } from "../redux/userSlice";
 import responseHandler from "./helpers";
 import { useNavigation } from "@react-navigation/native";
+import { showSuccessToast } from "../components/basic/ToastComponent";
 
 
 const useAuth = () => {
@@ -39,6 +40,7 @@ const useAuth = () => {
               // Store the token securely using AsyncStorage or any other secure storage method
               AsyncStorage.setItem("authToken", data.token);
               dispatch(login({ loggedIn: true, token: data.token }))
+              showSuccessToast("Sucess","You have logged in successfully.")
               // console.log("data stored");
               // navigation.navigate("DashboardStackNav");
               // Navigate to the dashboard or another authorized page
@@ -120,6 +122,7 @@ const useAuth = () => {
             AsyncStorage.setItem("authToken", data.token);
             // navigation.navigate("OTP")
             dispatch(login({ loggedIn: true, token: data.token }))
+            showSuccessToast("Sucess","You have logged in successfully.")
             console.log("data stored");
           }
         }

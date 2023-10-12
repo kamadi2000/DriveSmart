@@ -1,3 +1,5 @@
+import { showErrorToast } from "../components/basic/ToastComponent"
+
 const responseHandler = (onSuccess, onError = () => {}, shouldNotify=true) => {
 
     return (res) => {
@@ -8,7 +10,8 @@ const responseHandler = (onSuccess, onError = () => {}, shouldNotify=true) => {
             if(shouldNotify){
                 //notification
             }
-            console.log({error: res.error})
+            // console.log({error: res.error})
+            showErrorToast('error',res.error)
             onError(res)
         }
     }

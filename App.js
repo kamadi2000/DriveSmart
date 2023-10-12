@@ -6,6 +6,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { useFonts } from "expo-font";
 import { Provider } from 'react-redux';
 import store from './src/redux/store'
+import Toast from 'react-native-toast-message'
 // import Login from './src/screens/loginScreen';
 
 
@@ -39,6 +40,7 @@ export default function App() {
         <StatusBar/>
         <NavigationContainer>
         <RouteNavigator /> 
+        <Toast/>
         </NavigationContainer>
       </SafeAreaProvider>
       </Provider>
