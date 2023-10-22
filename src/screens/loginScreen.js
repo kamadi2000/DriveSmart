@@ -31,8 +31,8 @@ import useAuth from "../apis/auth";
 const Login = () => {
   const navigation = useNavigation();
 
-  let [email, setEmail] = useState("Luxshan@gmail.com");
-  const [password, setPassword] = useState("123");
+  let [email, setEmail] = useState("liyanagek.20@uom.lk");
+  const [password, setPassword] = useState("12345678");
 
 
   const { hangleLogin } = useAuth()
