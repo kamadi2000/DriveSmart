@@ -8,6 +8,8 @@ node_modules/
 dist/
 web-build/
 
+./src/utils/constants.js
+
 # Native
 *.orig.*
 *.jks
