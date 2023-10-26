@@ -7,7 +7,7 @@ const DashboardItem = ({ icon, title, navigateTo }) => {
   const navigation = useNavigation();
 
   return (
-    <TouchableOpacity onPress={() => navigation.navigate(navigateTo)}>
+    <TouchableOpacity onPress={() => navigation.navigate(navigateTo)} style={{marginVertical: 10}}>
       <View style={styles.textComponent}>
         {icon}
         <Text style={styles.texts}>{title}</Text>

@@ -13,22 +13,22 @@ export const roadSignTypeList = [
     },
     {
         id: 2,
-        imgPath: require('../assets/images/roadSigns/WarningSign.png'),
+        imgPath: require('../assets/images/roadSigns/p.png'),
         title: 'Prohibitary Signs'
     },
     {
         id: 3,
-        imgPath: require('../assets/images/roadSigns/WarningSign.png'),
+        imgPath: require('../assets/images/roadSigns/M.png'),
         title: 'Restrictive Signs'
     },
     {
         id: 4,
-        imgPath: require('../assets/images/roadSigns/WarningSign.png'),
+        imgPath: require('../assets/images/roadSigns/s.png'),
         title: 'Mandatory Signs'
     },
     {
         id: 5,
-        imgPath: require('../assets/images/roadSigns/WarningSign.png'),
+        imgPath: require('../assets/images/roadSigns/o.png'),
         title: 'Traffic control Signals'
     },
 ]

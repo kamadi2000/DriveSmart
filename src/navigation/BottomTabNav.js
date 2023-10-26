@@ -93,9 +93,17 @@ const BottomTabNav = () => {
                         // console.log(navigation);
                         console.log()
                         //   navigation.dispatch(StackActions.popToTop());
-                       
-                        navigation.popToTop();
-
+                       try{
+                        console.log({route})
+                        if(route.state.index != 0)
+                        {
+                            navigation.popToTop();
+                        }
+                        
+                       }
+                       catch{
+                        console.log("")
+                       }
                             // Do something with the `navigation` object
                         navigation.navigate(route.name);
                         
