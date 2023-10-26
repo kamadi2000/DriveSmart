@@ -8,11 +8,11 @@ const SubHeading = ({name, isPremium, isCompleted, id, type, heading}) => {
     const navigation = useNavigation()
     const clicked =()=>{
         if(type === 'content'){
-            navigation.navigate('Content', {heading:heading, Vid:id})
+            navigation.navigate('Content', {heading:heading, id:id})
             return;
         }
         else{
-            navigation.navigate('Quiz View',{heading:heading, Qid:id})
+            navigation.navigate('Quiz View',{heading:heading, id:id})
             return;
         }
         

@@ -15,28 +15,28 @@ const Heading = ({item}) => {
     <View style={{flex:1, alignItems:'center' , marginHorizontal:20 }} >
         <View style={styles.headingContainer}>
             <Pressable onPress={toggle} android_ripple={{color:RIPPLE_COLOR}} style={({pressed}) => (pressed && Platform.OS != 'android')?[styles.pressableContainer, styles.pressed] : styles.pressableContainer} >
-                <Text style={styles.textContainer}>{item.id +". " + item.name}</Text>
-                <Ionicons style={{alignSelf:'center'}} name={`chevron-${ iscollapsed ? 'down': 'up'}-circle`} size={24} color= { (item.video.status && item.quiz.status ) ? "green" :"gray"} />
+                <Text style={styles.textContainer}>{item.no +". " + item.title}</Text>
+                <Ionicons style={{alignSelf:'center'}} name={`chevron-${ iscollapsed ? 'down': 'up'}-circle`} size={24} color= { (item.isCompleted) ? "green" :"gray"} />
             </Pressable>
             <View>
                 <Collapsible collapsed={iscollapsed} >
                     <View style={{backgroundColor:'gray', height:1, marginHorizontal:2}}></View>
                     <View style={styles.subHeadingcontainer}>
                         <SubHeading 
-                            id = {item.video.videoId}
+                            id = {item.no}
                             type="content"
-                            heading= {item.name}
-                            name={ item.id +  ".1 Interactive Video" }
-                            isCompleted={item.video.status} 
-                            isPremium={item.video.isPremium}/>
+                            heading= {item.title}
+                            name={ item.no +  ".1 Interactive Video" }
+                            isCompleted={item.isCompleted} 
+                            isPremium={false}/>
                         <View style={{backgroundColor:'lightgray', height:1, marginHorizontal:2}}></View>
                         <SubHeading 
-                            id = {item.quiz.quizId}
+                            id = {item.no}
                             heading= {item.name}
                             type="quiz"
-                            name={item.id + ".2 Quiz" }
-                            isCompleted={item.quiz.status} 
-                            isPremium={item.quiz.isPremium}/>
+                            name={item.no + ".2 Quiz" }
+                            isCompleted={item.isCompleted} 
+                            isPremium={true}/>
                     </View>
                 </Collapsible>
             </View>

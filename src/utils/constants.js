@@ -8,4 +8,5 @@ export const SCREEN_HEIGHT = Dimensions.get('screen').height;
 export const CARD_COLOR = '#FF5733';
 
 //change with your own url when running
-export const BACKEND_URL = "https://af98-212-104-225-58.ngrok.io/api"
+// export const BACKEND_URL = "https://af98-212-104-225-58.ngrok.io/api"
+export const BACKEND_URL = "http://192.168.8.182:5000/api"
