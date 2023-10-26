@@ -14,6 +14,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 import RoadSignsScreen from "../screens/RoadSignsTypeScreen";
 import RoadSignsListScreen from '../screens/RoadSignListScreen'
 import QuizViewScreen from "../screens/quizViewScreen";
+import ReviewScreen from "../screens/ReviewScreen";
+import PracticequizDetailsScreen from "../screens/PracticeQuizDetailsScreen";
+import QuizScreen from "../screens/QuizScreen";
 
 
 function DashBoardScreen({navigation}) {
@@ -81,7 +84,10 @@ function DashboardStackNav() {
             <Stack.Screen name="RoadSignsList" component={RoadSignsListScreen}/>
             <Stack.Screen name='Practice tests' component={Practice_tests} />
             <Stack.Screen name='Quiz' component={Quiz_Screen}/>
+            <Stack.Screen name='Practice test' component={QuizScreen}/>
+            <Stack.Screen name='PracticeQuizDetails' component={PracticequizDetailsScreen}/>
             <Stack.Screen name='QuizList' component={QuizList}/>
+            <Stack.Screen name='Review' component={ReviewScreen}/>
             <Stack.Screen name='Progress tracking' component={Progress_tracking} />
             <Stack.Screen name='Premium' component={Premium} />
 

@@ -2,41 +2,32 @@ import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import Card from "../components/basic/RoadSignTypeCardComponent";
 // import PracticeQuiz from "../components/PracticeQuiz";
 import { useNavigation, useRoute } from "@react-navigation/native";
+import useContent from "../apis/content";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { selectUserToken } from "../redux/userSlice";
+import { BACKEND_URL } from "../utils/constants";
 
-const quizList = [
-    {
-        id: 1,
-        title: `Practice Quiz 1`,
-        attemptsByUser : 1
-
-    },
-    {
-        id: 2,
-        title: `Practice Quiz 2`,
-        attemptsByUser : 1
-
-    },
-    {
-        id: 3,
-        title: `Practice Quiz 3`,
-        attemptsByUser : 1
-
-    },
-    {
-        id: 4,
-        title: `Final exam`,
-        attemptsByUser : 1
-
-    },
-]
 
 const PracticeQuizScreen = () => {
+    const { getPracticeQuizzes, practiceQuizList } = useContent()
     const navigation = useNavigation();
+    const token = useSelector(selectUserToken)
+    useEffect(() => {
+        if (token){
+            getPracticeQuizzes({token})
+            console.log({practiceQuizList})
+        }
+       
+        
+        
+    },[token])
+    
     return (
         <ScrollView contentContainerStyle={{justifyContent : 'center',alignItems : 'center',paddingTop:10}}>
-            {quizList.map((test)=>
-            <TouchableOpacity key={test.id} onPress={() => navigation.navigate('Quiz',{heading : test.title})}>
-                <Card  title={test.title}/>
+            {practiceQuizList?.map((test)=>
+            <TouchableOpacity key={test._id} onPress={() => {navigation.navigate('PracticeQuizDetails',{practiceQuiz : test})}}>
+                <Card  title={`Practice Quiz `+ test.quizNumber} imgPath={test.user_quiz? require("../assets/images/greenCar.jpeg"): require("../assets/images/redCar.png")}/>
             </TouchableOpacity>
             )}
         </ScrollView>
