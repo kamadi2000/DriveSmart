@@ -1,7 +1,7 @@
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import Card from "../components/basic/RoadSignTypeCardComponent";
 // import PracticeQuiz from "../components/PracticeQuiz";
-import { useNavigation, useRoute } from "@react-navigation/native";
+import { useIsFocused, useNavigation, useRoute } from "@react-navigation/native";
 import useContent from "../apis/content";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
@@ -13,15 +13,16 @@ const PracticeQuizScreen = () => {
     const { getPracticeQuizzes, practiceQuizList } = useContent()
     const navigation = useNavigation();
     const token = useSelector(selectUserToken)
+    const isFocused = useIsFocused()
     useEffect(() => {
-        if (token){
+        if (token && isFocused){
             getPracticeQuizzes({token})
             console.log({practiceQuizList})
         }
        
         
         
-    },[token])
+    },[token, isFocused])
     
     return (
         <ScrollView contentContainerStyle={{justifyContent : 'center',alignItems : 'center',paddingTop:10}}>

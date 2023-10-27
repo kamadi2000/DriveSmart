@@ -44,19 +44,20 @@ const QuizScreen = () => {
             return newAnswerList
         })
     }
-    const handleSubmit = () => {
+    const handleSubmit = async () => {
         console.log({ 
             userPracticePaper : answers, 
             startedOn : today.toDateString(), 
             submitOn : today.toLocaleTimeString(),
             quizNumber : quizNumber })
-        submitPracticeQuiz({ 
+        await submitPracticeQuiz({ 
             userPracticePaper : answers, 
             startedOn : today.toDateString(), 
             submitOn : today.toLocaleTimeString(),
             quizNumber : quizNumber,
             token : token })
         console.log("clicked")
+        navigation.navigate('Practice tests')
         
         // console.log({ answers })
         
@@ -90,7 +91,7 @@ const QuizScreen = () => {
                             text: "Submit",
                             onPress: () => {
                                 handleSubmit()
-                                navigation.navigate('Practice tests')
+                                
                             }, // naviaget to quizview
                             style: 'destructive'
                         }
