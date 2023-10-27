@@ -12,10 +12,12 @@ import {useDispatch} from 'react-redux'
 import { logout } from '../redux/userSlice';
 import AboutUsPopOver from '../components/AboutUsPopOver';
 import LanguagePopOver from '../components/LanguagePopOver';
+import { useTranslation } from 'react-i18next';
 
 
 const SettingsScreen = () => {
     const dispatch = useDispatch();
+    const { t } = useTranslation()
     const [isVisible,setIsvisible] = useState(false)
     const shareOurDownloadLink = async ()=>{
         try{
@@ -60,7 +62,7 @@ const SettingsScreen = () => {
                 <View style={{overflow:'hidden',borderRadius:15,margin:5}}>
                     <Pressable onPress={setIsvisible.bind(this, true)} style={{backgroundColor:'white',padding:15, flexDirection:'row', alignItems:'center'}} android_ripple={{color:'lightgray'}}>
                         <Ionicons   name="person-outline" size={25} color="gray" />
-                        <Text style={{fontFamily:'Poppins_Regular', fontSize:16, paddingStart:15}}>Profile</Text>
+                        <Text style={{fontFamily:'Poppins_Regular', fontSize:16, paddingStart:15}}>{t("Profile")}</Text>
                         <Ionicons style={{flex:1,textAlign:'right'}} name="chevron-forward" size={25} color="gray" />
                     </Pressable>
                 </View>
@@ -73,7 +75,7 @@ const SettingsScreen = () => {
                 <View style={{overflow:'hidden',borderRadius:15,margin:5}}>
                 <Pressable style={{backgroundColor:'white',padding:15, flexDirection:'row', alignItems:'center'}} android_ripple={{color:'lightgray'}}>
                     <Ionicons name="chatbubble-ellipses-outline" size={30} color="gray" />
-                    <Text style={{fontFamily:'Poppins_Regular', fontSize:16, paddingStart:15}}>Help Center</Text>
+                    <Text style={{fontFamily:'Poppins_Regular', fontSize:16, paddingStart:15}}>{t("Help Center")}</Text>
                 </Pressable>
                 </View>
 
@@ -84,19 +86,19 @@ const SettingsScreen = () => {
                 <View style={{overflow:'hidden',borderRadius:15,margin:5}}>
                 <Pressable style={{backgroundColor:'white',padding:15, flexDirection:'row', alignItems:'center'}} android_ripple={{color:'lightgray'}}>
                     <Ionicons   name="lock-closed-outline" size={25} color="gray" />
-                    <Text style={{fontFamily:'Poppins_Regular', fontSize:16, paddingStart:15}}>Privacy</Text>
+                    <Text style={{fontFamily:'Poppins_Regular', fontSize:16, paddingStart:15}}>{t("Privacy")}</Text>
                 </Pressable>
                 </View>
                 <View style={{overflow:'hidden',borderRadius:15,margin:5}}>
                 <Pressable onPress={shareOurDownloadLink} style={{backgroundColor:'white',padding:15, flexDirection:'row', alignItems:'center'}} android_ripple={{color:'lightgray'}}>
                     <Ionicons name="md-share-social-outline" size={30} color="gray" />
-                    <Text style={{fontFamily:'Poppins_Regular', fontSize:16, paddingStart:15}}>Share</Text>
+                    <Text style={{fontFamily:'Poppins_Regular', fontSize:16, paddingStart:15}}>{t("Share")}</Text>
                 </Pressable>
                 </View>
                 <View style={{overflow:'hidden',borderRadius:15,margin:5}}>
                 <Pressable style={{backgroundColor:'white',padding:15, flexDirection:'row', alignItems:'center'}} android_ripple={{color:'lightgray'}} onPress={()=>dispatch(logout())}>
                     <Ionicons   name="log-out-outline" size={30} color="black" />
-                    <Text style={{fontFamily:'Poppins_Regular', fontSize:16, paddingStart:15}}>Log out</Text>
+                    <Text style={{fontFamily:'Poppins_Regular', fontSize:16, paddingStart:15}}>{t("Log out")}</Text>
                 </Pressable>
                 </View>
 

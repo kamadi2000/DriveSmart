@@ -1,12 +1,22 @@
 {
     "translation": {
         "Study Materials": "கற்றல் பொருள்",
-        "dashBoard" : "டாஷ்போர்டு",
+        "Dashboard" : "டாஷ்போர்டு",
         "login": "உள்நுழைய",
-        "practice quiz" : "பயிற்சி வினாடி வினா",
+        "Practice Test" : "பயிற்சி வினாடி வினா",
         "Progress Tracking" : "முன்னேற்றம்",
         "Premium" : "பிரீமியம்",
         "Change language" : "மொழியை மாற்றவும்",
-        "Road Signs" : "சாலை அடையாளங்கள்"
+        "Road Signs" : "சாலை அடையாளங்கள்",
+        "Prefered Language": "விருப்பமான மொழி",
+        "Log out" : "வெளியேறு" ,
+        "Profile" : "சுயவிவரம்" ,
+        "Settings": "அமைப்புகள்",
+        "Help Center" : "உதவி மையம்",
+        "About" : "எங்களுக்கு பற்றி",
+        "Share" : "மற்றவர்களுக்கு அனுப்பவும்",
+        "Privacy" : "தனியுரிமை",
+        "Contact" : "தொடர்பு",
+        "Course" : "நிச்சயமாக"
     }
 }

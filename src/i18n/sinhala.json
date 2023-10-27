@@ -1,7 +1,7 @@
 {
     "translation": {
         "Study Materials": "ඉගෙනුම් දේවල්",
-        "dashBoard": "උපකරණ පුවරුව",
+        "Dashboard": "උපකරණ පුවරුව",
         "login": "ඇතුල් වන්න",
         "Practice Test": "ප්‍රශ්නාවලිය",
         "Progress Tracking": "ප්‍රගතිය",
@@ -9,7 +9,14 @@
         "Change language": "භාෂාව වෙනස් කරන්න",
         "Road Signs": "මාර්ග සංඥා",
         "Prefered Language": "කැමති භාෂාව",
-        "Dashboard": "dnsjla f",
-        "Settings": "ndhafbdh"
+        "Log out" : "පිටතට" ,
+        "Profile" : "පරිශීලක ගිණුම" ,
+        "Settings": "සැකසුම්",
+        "Help Center" : "උපකාරක මධ්යස්ථානය",
+        "Privacy" : "පෞද්ගලිකත්වය",
+        "About" : "අප ගැන",
+        "Share" : "අන් අයට යැවීම",
+        "Contact" : "අමතන්න",
+        "Course" : "පාඨමාලාව"
     }
 }

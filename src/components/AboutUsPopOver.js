@@ -5,14 +5,16 @@ import { useState } from "react";
 import Popover from 'react-native-popover-view';
 import { Ionicons } from '@expo/vector-icons';
 import { WIDTH } from "../utils/constants";
+import { useTranslation } from "react-i18next";
 
 const AboutUsPopOver = () => {
     const [showPopover, setShowPopover] = useState(false);
+    const { t } = useTranslation()
     return (
         <>
            <TouchableOpacity style={{ backgroundColor: 'white', padding: 15, flexDirection: 'row', alignItems: 'center' }} onPress={() => setShowPopover(true)}>
                 <Ionicons name="help-circle-outline" size={30} color="gray" />
-                <Text style={{ fontFamily: 'Poppins_Regular', fontSize: 16, paddingStart: 15 }}>About</Text>
+                <Text style={{ fontFamily: 'Poppins_Regular', fontSize: 16, paddingStart: 15 }}>{t("About")}</Text>
             </TouchableOpacity>
             <Popover
                 isVisible={showPopover}

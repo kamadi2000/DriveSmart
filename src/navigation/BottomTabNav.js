@@ -120,7 +120,7 @@ const BottomTabNav = () => {
                 name="CourseStack"
                 component={CourseStack}
                 options={{
-                    tabBarLabel: 'Course',
+                    tabBarLabel: t('Course'),
                     headerShown: false
 
                 }} />
@@ -128,14 +128,14 @@ const BottomTabNav = () => {
                 name='Contact'
                 component={ContactUsScreen}
                 options={{
-                    tabBarLabel: 'Contact',
+                    tabBarLabel: t("Contact"),
 
                 }} />
             <Tab.Screen
                 name='Settings'
                 component={SettingsScreenView}
                 options={{
-                    tabBarLabel: 'Settings',
+                    tabBarLabel: t('Settings'),
                     headerShown: false,
 
                 }} />
