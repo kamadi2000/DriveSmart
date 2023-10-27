@@ -11,6 +11,8 @@ import PopOverCommon from '../components/PopOverCommon';
 import {useDispatch} from 'react-redux'
 import { logout } from '../redux/userSlice';
 import AboutUsPopOver from '../components/AboutUsPopOver';
+import LanguagePopOver from '../components/LanguagePopOver';
+
 
 const SettingsScreen = () => {
     const dispatch = useDispatch();
@@ -65,12 +67,7 @@ const SettingsScreen = () => {
                 
                 
                 <View style={{overflow:'hidden',borderRadius:15,margin:5}}>
-                <Pressable style={{backgroundColor:'white',padding:15, flexDirection:'row', alignItems:'center'}} android_ripple={{color:'lightgray'}}>
-                    <Ionicons   name="language" size={25} color="gray" />
-                    <Text style={{fontFamily:'Poppins_Regular', fontSize:16, paddingStart:15}}>Prefered Language</Text>
-                    <Text style={{flex:1,fontFamily:'Poppins_Regular',textAlign:'right',color:'gray', fontSize:14, paddingStart:15}}>English</Text>
-                    <Ionicons style={{textAlign:'right'}} name="chevron-forward" size={25} color="gray" />
-                </Pressable>
+                    <LanguagePopOver/>
                 </View>
                 
                 <View style={{overflow:'hidden',borderRadius:15,margin:5}}>
@@ -79,9 +76,11 @@ const SettingsScreen = () => {
                     <Text style={{fontFamily:'Poppins_Regular', fontSize:16, paddingStart:15}}>Help Center</Text>
                 </Pressable>
                 </View>
+
                 <View style={{overflow:'hidden',borderRadius:15,margin:5}}>
                 <AboutUsPopOver/>
                 </View>
+
                 <View style={{overflow:'hidden',borderRadius:15,margin:5}}>
                 <Pressable style={{backgroundColor:'white',padding:15, flexDirection:'row', alignItems:'center'}} android_ripple={{color:'lightgray'}}>
                     <Ionicons   name="lock-closed-outline" size={25} color="gray" />

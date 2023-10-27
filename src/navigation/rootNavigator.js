@@ -7,7 +7,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import BottomTabNav from './BottomTabNav';
 import { PRIMARY_COLOR } from '../utils/colors';
 import SignUp from '../screens/signUpScreen';
-import Login from '../screens/loginScreen';
+import LoginScreen from '../screens/loginScreen';
 import { useSelector} from 'react-redux'
 import { selectIsUserLoggedIn } from '../redux/userSlice';
 import OTPScreen from '../screens/otpScreen';
@@ -17,14 +17,14 @@ import OTPScreen from '../screens/otpScreen';
 
 
 
-function LoginScreen() {
-  return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Login />
-      {/* <Text>Login</Text> */}
-    </View>
-  );
-}
+// function LoginScreen() {
+//   return (
+//     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+//       <Login />
+//       {/* <Text>Login</Text> */}
+//     </View>
+//   );
+// }
 function SignUpScreen() {
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>

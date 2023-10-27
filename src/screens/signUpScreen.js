@@ -87,11 +87,13 @@ const SignUp = () => {
           <HeadingText>Sign up</HeadingText>
           </View>
           <TextField 
+              testID="Name"
               label={<LabelText>Name</LabelText>}
               value={name}
               onChangeText={(text) => setName(text)} />
 
           <TextField 
+              testID="Email"
               label={<LabelText>Email</LabelText>}
               value={email}
               onChangeText={(text) => setEmail(text)}
@@ -100,6 +102,7 @@ const SignUp = () => {
               />
 
           <PasswordField 
+              testID="Password"
               label={<LabelText>Password</LabelText>}
               value={password}
               onChangeText={(text)=> setPassword(text)} 
@@ -107,6 +110,7 @@ const SignUp = () => {
               />
 
           <PasswordField 
+              testID="Re-enter password"
               label={<LabelText>Re-enter password</LabelText>}
               value={Rpassword}
               onChangeText={(text) => setRPassword(text)} />
@@ -137,7 +141,7 @@ const SignUp = () => {
             />
           </HorizontalStack>
 
-          <GoogleLoginButton />
+          {/* <GoogleLoginButton /> */}
 
           <Task_button>
             <HorizontalStack>

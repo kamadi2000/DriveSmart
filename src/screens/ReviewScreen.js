@@ -5,8 +5,9 @@ import React, { useState, useEffect,  } from 'react'
 import { BACKGROUND_COLOR } from '../utils/colors'
 import PrimaryButton from '../components/basic/PrimaryButton';
 import ExamHeader from '../components/ExamHeader';
-import Question, { ReviewQuestion } from '../components/Question';
+
 import { useNavigation ,useRoute} from '@react-navigation/native';
+import { ReviewQuestion } from '../components/ReviewQuestion';
 
 const userReview = (paperQuestions , userAnswers) => {
   var reviewAnswers = {}

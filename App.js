@@ -7,6 +7,9 @@ import { useFonts } from "expo-font";
 import { Provider } from 'react-redux';
 import store from './src/redux/store'
 import Toast from 'react-native-toast-message'
+import { useEffect } from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useTranslation } from 'react-i18next';
 // import Login from './src/screens/loginScreen';
 
 
@@ -21,6 +24,16 @@ export default function App() {
       NotoSansSinhala : require('./src/assets/fonts/NotoSansSinhala.ttf')
 
     })
+
+    const {i18n} = useTranslation()
+
+    useEffect(() => {
+      AsyncStorage.getItem("language").then(lang => {
+          if(lang){
+              i18n.changeLanguage(lang)
+          }
+      })
+  }, [])
   
   // const onLayoutRootView = useCallback(async () => {
   //     //   if (fontsLoaded ) {

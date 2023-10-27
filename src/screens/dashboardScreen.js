@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { SafeAreaView, ScrollView, StyleSheet, View } from 'react-native';
+import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { Ionicons, FontAwesome5, MaterialIcons, Entypo } from '@expo/vector-icons';
 import DashboardItem from '../components/DashboardItem';
 import LottieView from 'lottie-react-native';
 import { WIDTH } from '../utils/constants';
+import { useTranslation } from 'react-i18next';
+import {t as t_} from "../i18n"
 
 function DashboardScreen() {
 
@@ -12,6 +14,8 @@ function DashboardScreen() {
   useEffect(() => {
     // setTimeout(() => {setShowWelcome(false)}, 2000)
   }, [])
+
+  const {t} = useTranslation()
 
   return (
     <SafeAreaView style={styles.backgroundContainer} >
@@ -31,27 +35,27 @@ function DashboardScreen() {
     </View>}
       <DashboardItem
         icon={<Ionicons name="book" size={34} color="black" />}
-        title="Study Materials"
+        title={<Text>{t("Study Materials")}</Text>}
         navigateTo="CourseStack"
       />
       <DashboardItem
         icon={<FontAwesome5 name="road" size={34} color="black" />}
-        title="Road Signs"
+        title={t("Road Signs")}
         navigateTo="RoadSigns"
       />
       <DashboardItem
         icon={<FontAwesome5 name="pen-alt" size={34} color="black" />}
-        title="Practice Test"
+        title={t("Practice Test")}
         navigateTo="Practice tests"
       />
       <DashboardItem
         icon={<Ionicons name="md-bar-chart" size={34} color="black" />}
-        title="Progress Tracking"
+        title={t("Progress Tracking")}
         navigateTo="Progress tracking"
       />
       <DashboardItem
         icon={<Entypo name="credit-card" size={34} color="black" />}
-        title="Premium"
+        title={t("Premium")}
         navigateTo="Premium"
       />
       </ScrollView>

@@ -5,13 +5,14 @@ import { LabelText } from "./TextComponent";
 import { WIDTH } from "../../utils/constants";
 import { BACKGROUND_COLOR, PRIMARY_COLOR } from "../../utils/colors";
 
-export const PasswordField = ({ label, value, onChangeText }) => {
+export const PasswordField = ({ label, value, onChangeText, testID }) => {
   const [cont, setCont] = useState("");
   const [show, setShow] = useState(false);
   const [focused, setFocused] = useState(false)
   return (
     <View style={{ height: 40, width: WIDTH * 0.8 }}>
       <FloatingLabelInput
+      testID={testID}
         autoCapitalize="none"
         label={label}
         isPassword
@@ -45,12 +46,13 @@ export const PasswordField = ({ label, value, onChangeText }) => {
   );
 };
 
-export const TextField = ({ label, value, onChangeText, onEndEditing ,...props }) => {
+export const TextField = ({ label, value, onChangeText, onEndEditing, testID ,...props }) => {
   // const [cont, setCont] = useState('');
   const [show, setShow] = useState(false);
   return (
     <View style={{ height: 40, width: WIDTH * 0.8 }}>
       <FloatingLabelInput
+      testID={testID}
         label={label}
         staticLabel
         value={value}

@@ -17,6 +17,7 @@ import QuizViewScreen from "../screens/quizViewScreen";
 import ReviewScreen from "../screens/ReviewScreen";
 import PracticequizDetailsScreen from "../screens/PracticeQuizDetailsScreen";
 import QuizScreen from "../screens/QuizScreen";
+import { useTranslation } from "react-i18next";
 
 
 function DashBoardScreen({navigation}) {
@@ -64,6 +65,7 @@ function Premium() {
 const Stack = createStackNavigator();
 
 function DashboardStackNav() {
+    const {t} = useTranslation()
     return (
         <Stack.Navigator 
             initialRouteName='DashBoard' 
@@ -77,7 +79,7 @@ function DashboardStackNav() {
             <Stack.Screen 
                 name="DashBoard" 
                 component={DashBoardScreen}
-                options={{title : 'Dashboard'}}
+                options={{title : t('Dashboard')}}
                 />
             {/* <Stack.Screen name="RoadSignsStack" component={RoadStackNav} options={{headerShown : false}}/> */}
             <Stack.Screen name="RoadSigns" component={RoadSignsScreen}/>

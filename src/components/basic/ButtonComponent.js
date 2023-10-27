@@ -2,8 +2,9 @@ import { TouchableOpacity } from "react-native";
 import { WIDTH } from "../../utils/constants";
 import { PRIMARY_COLOR, SECONDARY_COLOR } from "../../utils/colors";
 
-export const Task_button = ({ children, style, onPress }) => (
+export const Task_button = ({ children, style, onPress, testID }) => (
   <TouchableOpacity
+    testID={testID}
     onPress={onPress}
     style={{
       backgroundColor: PRIMARY_COLOR,

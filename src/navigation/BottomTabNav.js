@@ -11,6 +11,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import DashboardStackNav from './DashboardStackNav';
 import SettingsScreen from '../screens/settingsScreen';
 import ContactScreen from '../screens/contactScreen';
+import { useTranslation } from 'react-i18next';
 
 
 
@@ -38,6 +39,9 @@ function SettingsScreenView() {
 const Tab = createBottomTabNavigator();
 
 const BottomTabNav = () => {
+
+    const {t } = useTranslation()
+
     return (
         <Tab.Navigator
             initialRouteName="DashBoard"
@@ -83,7 +87,7 @@ const BottomTabNav = () => {
                 name="DashBoardStack"
                 component={DashBoardStack}
                 options={{
-                    tabBarLabel: 'Dashboard',
+                    tabBarLabel: t('Dashboard'),
                     headerShown: false
 
 
